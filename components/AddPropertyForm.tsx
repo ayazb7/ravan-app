@@ -16,7 +16,7 @@ const AddPropertyForm = () => {
 
   const [formData, setFormData] = useState(startingPropertyData);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const value = e.target.value;
     const name = e.target.name;
 
