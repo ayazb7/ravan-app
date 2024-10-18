@@ -4,7 +4,11 @@ import FilteredProperties from "@/components/FilteredProperties";
 import SearchBg from "@/logos/Searchbg.png";
 import Link from "next/link";
 
-const CommercialPropertiesPage = async ({ searchParams }) => {
+interface SearchParams {
+  search?: string;
+}
+
+const CommercialPropertiesPage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const search =
     typeof searchParams.search === "string" ? searchParams.search : undefined;
 
