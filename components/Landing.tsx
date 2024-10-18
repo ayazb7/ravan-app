@@ -4,6 +4,8 @@ import bg from "@/logos/homephoto.png";
 import Video from "next-video";
 import "@/app/globals.css";
 import videoLoop from "@/videos/bg.mp4";
+import Link from "next/link";
+
 
 const Landing = () => {
   return (
@@ -25,9 +27,11 @@ const Landing = () => {
           Turning Property Dreams into Reality
         </h1>
         <div className="flex space-x-4 mt-8">
-          <button className="btn-custom hover:bg-black hover:rounded-lg">
-            Commercial
-          </button>
+          <Link href="/Commercial">
+            <button className="btn-custom hover:bg-black hover:rounded-lg">
+              Commercial
+            </button>
+          </Link>
           <button className="btn-custom hover:bg-black hover:rounded-lg">
             Residential
           </button>
