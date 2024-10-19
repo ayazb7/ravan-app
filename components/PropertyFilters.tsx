@@ -16,10 +16,10 @@ const PropertyFilters = () => {
   const [priceRange, setPriceRange] = useState("Price Range");
   const [bedrooms, setBedrooms] = useState("Bedrooms");
 
-  const handleLocationSelect = (key) => setLocation(key);
-  const handlePropertyTypeSelect = (key) => setPropertyType(key);
-  const handlePriceRangeSelect = (key) => setPriceRange(key);
-  const handleBedroomsSelect = (key) => setBedrooms(key);
+  const handleLocationSelect = (key: string) => setLocation(key);
+  const handlePropertyTypeSelect = (key: string) => setPropertyType(key);
+  const handlePriceRangeSelect = (key: string) => setPriceRange(key);
+  const handleBedroomsSelect = (key: string) => setBedrooms(key);
   useEffect(() => {
     const query = [
       location && `location=${location}`,
