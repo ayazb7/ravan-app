@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { useCurrency } from "@/context/currencyContext";
 
 interface CardProps {
-  imageSrc: StaticImageData;
+  imageSrc: string | StaticImageData; // Accept both string and StaticImageData
   basePrice: number;
   details: string;
   address: string;
@@ -16,10 +16,10 @@ const CardProp: React.FC<CardProps> = ({
   details,
   address,
 }) => {
-  const { currency, conversionRates } = useCurrency(); // Use conversion rates from context
+  const { currency, conversionRates } = useCurrency();
   const [convertedPrice, setConvertedPrice] = useState(basePrice);
   const [currencySymbol, setCurrencySymbol] = useState("AED");
-  const [isHovered, setIsHovered] = useState(false); // Add isHovered state
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (conversionRates && conversionRates[currency]) {

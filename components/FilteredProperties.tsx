@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { StaticImageData } from 'next/image';
 import CardProp from "@/components/CardProp";
+
 
 // Define the type for a property
 interface Property {
