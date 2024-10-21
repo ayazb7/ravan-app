@@ -1,6 +1,6 @@
 import Property from "@/app/models/Property";
 import { NextResponse } from "next/server";
-
+import { parse } from "url";
 export async function GET() {
   try {
     const properties = await Property.find();

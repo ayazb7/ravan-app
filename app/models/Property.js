@@ -5,10 +5,7 @@ if (!process.env.MONGODB_URI) {
   throw new Error("MONGODB_URI environment variable is missing.");
 }
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 
 // Define the schema.

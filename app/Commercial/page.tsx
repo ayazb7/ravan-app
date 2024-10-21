@@ -1,14 +1,15 @@
-import React from "react";
 import PropertyFilters from "@/components/PropertyFilters";
 import FilteredProperties from "@/components/FilteredProperties";
 import SearchBg from "@/logos/Searchbg.png";
 import Link from "next/link";
 
 interface SearchParams {
-  location?: string;
-  propertyType?: string;
-  priceRange?: string;
   bedrooms?: string;
+  priceRange?: string;
+  propertyType?: string;
+  paymentPlan?: string;
+  projectDelivery?: string;
+  developer?: string;
 }
 
 const CommercialPropertiesPage = async ({
@@ -16,28 +17,27 @@ const CommercialPropertiesPage = async ({
 }: {
   searchParams: SearchParams;
 }) => {
-  const Location =
-    typeof searchParams.location === "string"
-      ? searchParams.location
-      : undefined;
-  const Type =
-    typeof searchParams.propertyType === "string"
-      ? searchParams.propertyType
-      : undefined;
-  const Price =
-    typeof searchParams.priceRange === "string"
-      ? searchParams.priceRange
-      : undefined;
-  const Bedroom =
-    typeof searchParams.bedrooms === "string"
-      ? searchParams.bedrooms
-      : undefined;
+  const {
+    bedrooms,
+    priceRange,
+    propertyType,
+    paymentPlan,
+    projectDelivery,
+    developer,
+  } = searchParams;
 
-  // Fetch properties server-side (can be based on the `search` parameter)
-  console.log(Location, Type, Price, Bedroom);
+  // Fetch properties server-side based on the `searchParams`
   const fetchProperties = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api"); // Replace with your correct API endpoint
+      const response = await fetch(
+        `http://localhost:3000/api/commercial?bedrooms=${
+          bedrooms || ""
+        }&priceRange=${priceRange || ""}&propertyType=${
+          propertyType || ""
+        }&paymentPlan=${paymentPlan || ""}&projectDelivery=${
+          projectDelivery || ""
+        }&developer=${developer || ""}`
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch properties");
       }
