@@ -19,24 +19,34 @@ export async function GET(req) {
     if (bedrooms && bedrooms !== "Bedrooms") {
       query.bedrooms = bedrooms;
     }
+
+    // Parse price range and convert to a numeric value for comparison
     if (priceRange && priceRange !== "Price Range") {
-      query.priceRange = priceRange;
+      const maxPrice = parseFloat(priceRange.replace(/[^0-9.]/g, ""));
+      if (!isNaN(maxPrice)) {
+        query.price = { $lte: maxPrice }; // Match properties with a price less than or equal to `maxPrice`
+      }
     }
+
+    // Use regex for substring matching for propertyType, projectDelivery, and developer
     if (propertyType && propertyType !== "Property Type") {
-      query.propertyType = propertyType;
+      query.propertyType = { $regex: propertyType, $options: "i" }; // Case-insensitive match
     }
+    if (projectDelivery && projectDelivery !== "Project Delivery") {
+      query.delivery = { $regex: projectDelivery, $options: "i" };
+    }
+    if (developer && developer !== "Developer") {
+      query.developer = { $regex: developer, $options: "i" };
+    }
+
     if (paymentPlan && paymentPlan !== "Payment Plan") {
       query.paymentPlan = paymentPlan;
     }
-    if (projectDelivery && projectDelivery !== "Project Delivery") {
-      query.projectDelivery = projectDelivery;
-    }
-    if (developer && developer !== "Developer") {
-      query.developer = developer;
-    }
+
+    console.log("Constructed query:", query);
 
     // Fetch properties based on the constructed query object, adding type as a default
-    const properties = await Property.find({ type: "commercial" });
+    const properties = await Property.find({ type: "commercial", ...query });
 
     return NextResponse.json({ properties }, { status: 200 });
   } catch (err) {

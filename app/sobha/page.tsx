@@ -1,6 +1,6 @@
 import PropertyFilters from "@/components/PropertyFilters";
 import FilteredProperties from "@/components/FilteredProperties";
-import SearchBg from "@/logos/Searchbg.png";
+import SearchBg from "@/logos/sobhaphoto.jpg";
 import Link from "next/link";
 
 interface SearchParams {
@@ -12,7 +12,7 @@ interface SearchParams {
   developer?: string;
 }
 
-const CommercialPropertiesPage = async ({
+const SobhaPropertiesPage = async ({
   searchParams,
 }: {
   searchParams: SearchParams;
@@ -29,15 +29,7 @@ const CommercialPropertiesPage = async ({
   // Fetch properties server-side based on the `searchParams`
   const fetchProperties = async () => {
     try {
-      const response = await fetch(
-        `https://www.ravandubai.com/api/commercial?bedrooms=${
-          bedrooms || ""
-        }&priceRange=${priceRange || ""}&propertyType=${
-          propertyType || ""
-        }&paymentPlan=${paymentPlan || ""}&projectDelivery=${
-          projectDelivery || ""
-        }&developer=${developer || ""}`
-      );
+      const response = await fetch("https://www.ravandubai.com/api/emaar");
       if (!response.ok) {
         throw new Error("Failed to fetch properties");
       }
@@ -58,17 +50,11 @@ const CommercialPropertiesPage = async ({
         style={{ backgroundImage: `url(${SearchBg.src})` }}
       >
         <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4">
-          <p className="text-lg text-white hover:font-extrabold">
-            <Link href="/">Home</Link> /{" "}
-            <Link href="/Commercial">Commercial</Link>
-          </p>
-          <h1 className="text-6xl text-white font-bold">
-            Commercial Properties
-          </h1>
+          <p className="text-lg text-white hover:font-extrabold">About Sobha</p>
+          <h1 className="text-6xl text-white font-bold">Sobha Properties</h1>
           <p className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw]">
-            Something about commercial properties and Page
+            Something about Sobha
           </p>
-          <PropertyFilters />
         </div>
       </div>
       <FilteredProperties initialProperties={properties} />
@@ -76,4 +62,4 @@ const CommercialPropertiesPage = async ({
   );
 };
 
-export default CommercialPropertiesPage;
+export default SobhaPropertiesPage;

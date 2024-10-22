@@ -4,10 +4,14 @@ import CardProp from "@/components/CardProp";
 // Define the type for a property
 interface Property {
   _id: string;
-  photoUrl: string;
+  status: string;
+  bedrooms: string;
   price: number;
-  address: string;
-  bedrooms: number;
+  photoUrl: string;
+  delivery: string;
+  developer: string;
+  paymentPlan: string;
+  propertyType: string;
   // Add other fields as needed
 }
 
@@ -24,15 +28,22 @@ const FilteredProperties: React.FC<FilteredPropertiesProps> = ({
   }
 
   return (
-    <div className="flex my-10 items-center justify-center xl:grid-cols-4 grid-cols-2 w-[70vw]">
-      <div className="space-y-4">
+    <div className="my-10 w-[75vw] flex-col items-center justify-center">
+      <h2 className="mb-10 text-center text-white text-5xl font-semibold ">
+        Properties
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-14 gap-y-10">
         {initialProperties.map((property) => (
           <CardProp
             key={property._id}
-            imageSrc={property.photoUrl}
-            basePrice={property.price}
-            details={`Number of bedrooms: ${property.bedrooms}`}
-            address={property.address}
+            status={property.status}
+            bedrooms={property.bedrooms}
+            price={property.price}
+            photoUrl={property.photoUrl}
+            delivery={property.delivery}
+            developer={property.developer}
+            paymentPlan={property.paymentPlan}
+            propertyType={property.propertyType}
           />
         ))}
       </div>
