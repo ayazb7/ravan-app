@@ -4,6 +4,8 @@ import home_logo from '@/logos/Icon.svg'
 import Image from '@/node_modules/next/image'
 import Link from '@/node_modules/next/link'
 import Email_logo from '@/logos/mail-01.svg'
+import { COMPANY_INFO } from '../config.js'; // Adjust the path as necessary
+
 const Footer = () => { 
   return (
     <div> 
@@ -24,16 +26,13 @@ const Footer = () => {
         <div className='flex flex-col justify-start my-20 mr-20 gap-5'>
             <a className='mb-1 text-white text-xl font-bold'>Information</a>
             <div className='flex w-full space-x-3'>
-                
                 <Image src={home_logo} alt="Logo" />
-                <p className='text-white text-base font-medium'>Damac Business Tower 17th Floor, Business Bay, Dubai, UAE</p>
+                <p className='text-white text-base font-medium'>{COMPANY_INFO.address}</p>
             </div>
             <div className='flex w-full space-x-3'>
-                
                 <Image src={Email_logo} alt="Logo" />
-                <p className='text-white text-base font-medium'>info@highendtrading.ae</p>
+                <p className='text-white text-base font-medium'>{COMPANY_INFO.email}</p>
             </div>
-            
         </div>
     </div>
     <div className='bg-my_blue2 w-full flex-col flex md:hidden  justify-between '>
@@ -53,16 +52,13 @@ const Footer = () => {
         <div className='flex flex-col justify-start ml-3 my-10 mr-20 gap-5'>
             <a className='mb-1 text-white text-xl font-bold'>Information</a>
             <div className='flex w-full space-x-3'>
-                
                 <Image src={home_logo} alt="Logo" />
-                <p className='text-white text-base font-medium'>Damac Business Tower 17th Floor, Business Bay, Dubai, UAE</p>
+                <p className='text-white text-base font-medium'>{COMPANY_INFO.address}</p>
             </div>
             <div className='flex w-full space-x-3'>
-                
                 <Image src={Email_logo} alt="Logo" />
-                <p className='text-white text-base font-medium'>info@highendtrading.ae</p>
+                <p className='text-white text-base font-medium'>{COMPANY_INFO.email}</p>
             </div>
-            
         </div>
     </div>
     </div> 

@@ -141,25 +141,25 @@ const PropertyFilters = () => {
           </DropdownItem>
           <DropdownItem
             key="House"
-            onClick={() => handlePropertyTypeSelect("villa")}
+            onClick={() => handlePropertyTypeSelect("Villa")}
           >
             villa
           </DropdownItem>
           <DropdownItem
             key="Condo"
-            onClick={() => handlePropertyTypeSelect("studio")}
+            onClick={() => handlePropertyTypeSelect("Studio")}
           >
             studio
           </DropdownItem>
           <DropdownItem
             key="Condo"
-            onClick={() => handlePropertyTypeSelect("penthouse")}
+            onClick={() => handlePropertyTypeSelect("Penthouse")}
           >
             penthouse
           </DropdownItem>
           <DropdownItem
             key="Condo"
-            onClick={() => handlePropertyTypeSelect("lagoon")}
+            onClick={() => handlePropertyTypeSelect("Lagoon")}
           >
             lagoon
           </DropdownItem>
