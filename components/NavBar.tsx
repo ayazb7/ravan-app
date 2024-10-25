@@ -137,7 +137,7 @@ const NavBar: React.FC = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   {/* Wrap the NavigationMenuLink inside Link */}
-                  <Link href="/" passHref>
+                  <Link href="/commercial" passHref>
                     <NavigationMenuLink>To Buy</NavigationMenuLink>
                   </Link>
                   <Link href="/" passHref>

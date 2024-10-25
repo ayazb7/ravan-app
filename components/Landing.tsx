@@ -27,7 +27,7 @@ const Landing = () => {
           Turning Property Dreams into Reality
         </h1>
         <div className="flex space-x-4 mt-8">
-          <Link href="/Commercial">
+          <Link href="/commercial">
             <button className="btn-custom hover:bg-black hover:rounded-lg">
               Commercial
             </button>

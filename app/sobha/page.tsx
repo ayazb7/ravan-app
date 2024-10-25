@@ -29,7 +29,7 @@ const SobhaPropertiesPage = async ({
   // Fetch properties server-side based on the `searchParams`
   const fetchProperties = async () => {
     try {
-      const response = await fetch("https://www.ravandubai.com/api/emaar");
+      const response = await fetch("http://localhost:3000/api/emaar");
       if (!response.ok) {
         throw new Error("Failed to fetch properties");
       }

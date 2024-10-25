@@ -30,7 +30,7 @@ const CommercialPropertiesPage = async ({
   const fetchProperties = async () => {
     try {
       const response = await fetch(
-        `https://www.ravandubai.com/api/commercial?bedrooms=${
+        `http://localhost:3000/api/commercial?bedrooms=${
           bedrooms || ""
         }&priceRange=${priceRange || ""}&propertyType=${
           propertyType || ""
@@ -60,7 +60,7 @@ const CommercialPropertiesPage = async ({
         <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4">
           <p className="text-lg text-white hover:font-extrabold">
             <Link href="/">Home</Link> /{" "}
-            <Link href="/Commercial">Commercial</Link>
+            <Link href="/commercial">Commercial</Link>
           </p>
           <h1 className="text-6xl text-white font-bold">
             Commercial Properties
