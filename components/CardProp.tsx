@@ -1,15 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image, { StaticImageData } from "next/image";
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { useCurrency } from "@/context/currencyContext";
+import useEmblaCarousel from "embla-carousel-react";
 
 interface CardProps {
   type: string;
   status: string;
   bedrooms: string;
   price: number;
-  photoUrl: string;
-  adress: string | undefined;
+  photoUrl: string; // Base path to the folder containing images, e.g., "/images/properties"
+  address: string | undefined;
   delivery: string;
   developer: string;
   paymentPlan: string;
@@ -23,7 +24,7 @@ const CardProp: React.FC<CardProps> = ({
   bedrooms,
   price,
   photoUrl,
-  adress,
+  address,
   delivery,
   developer,
   paymentPlan,
@@ -34,7 +35,15 @@ const CardProp: React.FC<CardProps> = ({
   const { currency, conversionRates } = useCurrency();
   const [convertedPrice, setConvertedPrice] = useState(price);
   const [currencySymbol, setCurrencySymbol] = useState("AED");
+  const [emblaRef, emblaApi] = useEmblaCarousel();
   const [isHovered, setIsHovered] = useState(false);
+
+  // Construct paths for images
+  const photos = [
+    `${photoUrl}/image1.png`,
+    `${photoUrl}/image2.png`,
+    `${photoUrl}/image3.png`,
+  ];
 
   useEffect(() => {
     if (conversionRates && conversionRates[currency]) {
@@ -43,6 +52,14 @@ const CardProp: React.FC<CardProps> = ({
     }
   }, [currency, price, conversionRates]);
 
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
     <div
       className={`relative overflow-hidden shadow-lg cursor-pointer rounded-2xl flex flex-col`}
@@ -50,15 +67,35 @@ const CardProp: React.FC<CardProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image Section */}
-      <div className="relative w-full h-1/2">
-        <Image
-          src={photoUrl}
-          alt={"property image"}
-          layout="fill"
-          objectFit="cover"
-          className="w-full h-full transition-transform duration-500"
-        />
+      {/* Carousel Section */}
+      <div className="relative w-full h-1/2" ref={emblaRef}>
+        <div className="flex">
+          {photos.map((src, index) => (
+            <div className="relative flex-[0_0_100%] w-full h-full" key={index}>
+              <Image
+                src={src}
+                alt={`property image ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                className="w-full h-full transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Buttons */}
+        <button
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2"
+          onClick={scrollPrev}
+        >
+          ‹
+        </button>
+        <button
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2"
+          onClick={scrollNext}
+        >
+          ›
+        </button>
       </div>
 
       {/* Content Section */}
@@ -66,21 +103,15 @@ const CardProp: React.FC<CardProps> = ({
         <div className="text-start">
           <p className="text-2xl font-bold mb-2">
             Price {currencySymbol} {convertedPrice}{" "}
-            {status == "For Sale" ? "" : "p/m"}
+            {status === "For Sale" ? "" : "p/m"}
           </p>
           <p className="text-lg font-medium">Bedrooms: {bedrooms}</p>
-          <p
-            className="text-base
-           font-medium"
-          >
-            {propertyType}
-          </p>
+          <p className="text-base font-medium">{propertyType}</p>
           <p className="text-base font-medium">
-            to be delivered by: {delivery}
+            To be delivered by: {delivery}
           </p>
-
           <p className="text-base font-medium">Developer: {developer}</p>
-          <p className="text-base font-medium">payment plan : {paymentPlan}</p>
+          <p className="text-base font-medium">Payment plan: {paymentPlan}</p>
         </div>
 
         {/* Adjusted Buttons */}
