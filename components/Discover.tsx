@@ -45,10 +45,10 @@ const Discover = () => {
       {/* Property Cards */}
       <div className="flex w-full h-full items-center justify-center space-x-10">
         <CardProp
-          key={"property._id"}
+          key={"33"}
           status={"property.status"}
           bedrooms={"property.bedrooms"}
-          price={2}
+          price={3}
           photoUrl={"/cardImage"}
           delivery={"ahlfh"}
           developer={"property.developer"}
@@ -56,10 +56,10 @@ const Discover = () => {
           propertyType={"property.propertyType"}
         />
         <CardProp
-          key={"property._id"}
+          key={"11"}
           status={"property.status"}
           bedrooms={"property.bedrooms"}
-          price={2}
+          price={1}
           photoUrl={"/cardImage"}
           delivery={"ahlfh"}
           developer={"property.developer"}
@@ -68,10 +68,10 @@ const Discover = () => {
         />
 
         <CardProp
-          key={"property._id"}
+          key={"123"}
           status={"property.status"}
           bedrooms={"property.bedrooms"}
-          price={2}
+          price={24}
           photoUrl={"/cardImage"}
           delivery={"ahlfh"}
           developer={"property.developer"}
