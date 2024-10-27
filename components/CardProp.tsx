@@ -5,16 +5,15 @@ import { useCurrency } from "@/context/currencyContext";
 import EmblaCarousel from "./EmblaCarousel2";
 
 interface CardProps {
-  type: string;
   status: string;
   bedrooms: string;
   price: number;
   photoUrl: string;
-  adress: string | undefined;
+
   delivery: string;
   developer: string;
   paymentPlan: string;
-  project: string;
+
   propertyType: string;
 }
 
