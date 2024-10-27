@@ -19,16 +19,15 @@ interface CardProps {
 }
 
 const CardProp: React.FC<CardProps> = ({
-  type,
   status,
   bedrooms,
   price,
   photoUrl,
-  adress,
+
   delivery,
   developer,
   paymentPlan,
-  project,
+
   propertyType,
 }) => {
   price = price * 1000000;

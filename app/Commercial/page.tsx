@@ -30,7 +30,7 @@ const CommercialPropertiesPage = async ({
   const fetchProperties = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/commercial?bedrooms=${
+        `https://www.ravandubai.com/api/commercial?bedrooms=${
           bedrooms || ""
         }&priceRange=${priceRange || ""}&propertyType=${
           propertyType || ""
