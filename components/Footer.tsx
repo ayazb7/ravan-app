@@ -29,14 +29,20 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-start my-20 gap-3">
           <a className="mb-1 text-white text-xl font-bold">Services</a>
-          <Link href="/" className="text-white text-base font-medium">
-            Import
+          <Link href="/commercial" className="text-white text-base font-medium">
+            Commercial
           </Link>
-          <Link href="/" className="text-white text-base font-medium">
-            Distribution
+          <Link
+            href="/residential"
+            className="text-white text-base font-medium"
+          >
+            Residential
           </Link>
-          <Link href="/" className="text-white text-base font-medium">
-            Delivery
+          <Link href="/off Plan" className="text-white text-base font-medium">
+            Off Plan
+          </Link>
+          <Link href="/mortgage" className="text-white text-base font-medium">
+            Mortgage
           </Link>
         </div>
         <div className="flex flex-col justify-start my-20 mr-20 gap-5">
