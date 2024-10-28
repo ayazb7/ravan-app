@@ -29,7 +29,7 @@ body {
 }
 /* In global.css or another CSS file */
 .btn-custom {
-  @apply outline-white w-[18vw] h-[9vh] outline outline-2  text-white text-xl;
+  @apply outline-white md:w-[18vw] w-[40vw] h-[10vh] md:h-[9vh] outline outline-2  text-white text-base md:text-xl;
 }
 @layer base {
   :root {

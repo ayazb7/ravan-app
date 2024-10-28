@@ -2,7 +2,7 @@
 
 export const COMPANY_INFO = {
   companyName: "Ravan Real Estate",
-  phoneNumber: "+123 456 7890", // Replace with the actual company number
+  phoneNumber: "+971 542002168", // Replace with the actual company number
   email: "admin@ravan.ae", // Replace with the actual company email address
-  address: "123 Real Estate Street, City, Country, 45678", // Replace with the actual company address
+  address: "1706 damac business tower, Business bay", // Replace with the actual company address
 };

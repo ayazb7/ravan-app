@@ -65,7 +65,7 @@ const ListProperty = () => {
   };
 
   return (
-    <div className="flex flex-col  items-center justify-center ">
+    <div className="flex flex-col mt-28 items-center justify-center ">
       <h2 className="text-white text-start font-semibold text-5xl pb-10">
         List Your Property
       </h2>

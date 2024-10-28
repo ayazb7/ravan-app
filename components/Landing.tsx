@@ -3,9 +3,8 @@ import React from "react";
 import bg from "@/logos/homephoto.png";
 import Video from "next-video";
 import "@/app/globals.css";
-import videoLoop from "@/videos/bg.mp4";
+import videoLoop from "@/videos/bg6.mp4";
 import Link from "next/link";
-
 
 const Landing = () => {
   return (
@@ -23,10 +22,10 @@ const Landing = () => {
         <div className="video-overlay"></div>
       </div>
       <div className="absolute flex flex-col items-center justify-center">
-        <h1 className="text-white font-black text-5xl text-center mb-8">
+        <h1 className="text-white font-black md:text-5xl text-base w-[65vw] md:w-[100vw]  text-center mb-8">
           Turning Property Dreams into Reality
         </h1>
-        <div className="flex space-x-4 mt-8">
+        <div className="flex flex-wrap justify-center space-x-4 space-y-4 md:space-x-4 md:space-y-0 md:flex-nowrap">
           <Link href="/commercial">
             <button className="btn-custom hover:bg-black hover:rounded-lg">
               Commercial

@@ -29,7 +29,7 @@ const SobhaPropertiesPage = async ({
   // Fetch properties server-side based on the `searchParams`
   const fetchProperties = async () => {
     try {
-      const response = await fetch("https://www.ravandubai.com/api/emaar");
+      const response = await fetch("http://localhost:3000/api/emaar");
       if (!response.ok) {
         throw new Error("Failed to fetch properties");
       }
@@ -46,17 +46,28 @@ const SobhaPropertiesPage = async ({
   return (
     <div className="flex flex-col bg-black items-center">
       <div
-        className="relative h-[80vh] w-full bg-fixed bg-center bg-cover"
+        className="relative h-[80vh] w-full bg-fixed bg-center bg-cover "
         style={{ backgroundImage: `url(${SearchBg.src})` }}
       >
-        <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4">
-          <p className="text-lg text-white hover:font-extrabold">About Sobha</p>
-          <h1 className="text-6xl text-white font-bold">Sobha Properties</h1>
-          <p className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw]">
-            Something about Sobha
+        <div className="video-overlay"></div>
+        <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4 ">
+          <p className="text-lg text-white hover:font-extrabold brightness-200">
+            About Sobha
+          </p>
+          <h1 className="text-6xl text-white font-bold brightness-200">
+            Sobha Properties
+          </h1>
+          <p className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw] brightness-200">
+            Sobha are an international luxury real estate developer committed to
+            redefining the art of living by building sustainable communities.
+            Founded in 1976 by PNC Menon, a legendary innovator in the real
+            estate industry, as an interior design business in Oman, we have
+            established our presence all over the world with developments and
+            investments in UAE, Oman, Bahrain, Brunei and India.
           </p>
         </div>
       </div>
+
       <FilteredProperties initialProperties={properties} />
     </div>
   );

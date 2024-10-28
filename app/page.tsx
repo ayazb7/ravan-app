@@ -18,10 +18,10 @@ export default function Home() {
       <Partners />
       <AboutUs />
       <Services />
-      <Discover />
+      {/* <Discover /> */}
       <ListProperty />
       <ContactUs />
-      <div className="fixed bottom-0 left-5 w-[10vw]">
+      <div className="fixed bottom-5 left-5 w-[10vw]">
         <Link
           href="http://wa.me/971542002168"
           target="_blank"

@@ -41,9 +41,6 @@ const Footer = () => {
           <Link href="/off Plan" className="text-white text-base font-medium">
             Off Plan
           </Link>
-          <Link href="/mortgage" className="text-white text-base font-medium">
-            Mortgage
-          </Link>
         </div>
         <div className="flex flex-col justify-start my-20 mr-20 gap-5">
           <a className="mb-1 text-white text-xl font-bold">Information</a>
@@ -61,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-my_blue2 w-full flex-col flex md:hidden  justify-between ">
+      <div className="bg-black w-full flex-col flex md:hidden  justify-between ">
         <Image
           className="self-center"
           src={logo}
@@ -94,9 +91,6 @@ const Footer = () => {
           </Link>
           <Link href="/off Plan" className="text-white text-base font-medium">
             Off Plan
-          </Link>
-          <Link href="/mortgage" className="text-white text-base font-medium">
-            Mortgage
           </Link>
         </div>
         <div className="flex flex-col justify-start ml-3 my-10 mr-20 gap-5">

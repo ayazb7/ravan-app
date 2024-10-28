@@ -43,11 +43,25 @@ const CardProp: React.FC<CardProps> = ({
   }, [currency, price, conversionRates]);
 
   // Slides array with image paths
-  const slides = [
-    "/cardImage/image1.png",
-    "/cardImage/image2.png",
-    "/cardImage/image3.png",
-  ];
+  const [slides, setSlides] = useState([]);
+  const folderName = "buggati-binghati"; // Specify your folder name here
+
+  useEffect(() => {
+    const fetchSlides = async () => {
+      try {
+        const response = await fetch(`/api/getImages?folder=${folderName}`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setSlides(data);
+      } catch (error) {
+        console.error("Error fetching slides:", error);
+      }
+    };
+
+    fetchSlides();
+  }, [folderName]);
 
   return (
     <div
