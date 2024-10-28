@@ -294,3 +294,57 @@ body {
   --slide-spacing: 5rem;
   --slide-size: 100%;
 }
+.burger-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  box-shadow: -8px 0px 10px -2px rgba(0, 0, 0, 0.3); /* Adjust the spread and blur */
+  margin: 0 0;
+  padding: 0;
+  border-color: black;
+}
+
+.burger-menu * {
+  padding-bottom: 15px !important; /* Add padding to all elements inside .burger-menu */
+  width: 100%;
+}
+
+.burger-menu a {
+  margin-left: 10%;
+  color: black;
+  font-weight: bold;
+}
+
+.burger-menu a:hover {
+  background-color: rgb(221, 220, 220);
+}
+
+.burger-menu button {
+  align-self: center;
+  justify-self: center;
+  margin: 0 0 0 0;
+}
+.button-mobile {
+  width: 30% !important;
+  height: 6% !important;
+  border-radius: 30px !important;
+  align-self: flex-start !important;
+  margin-bottom: 2% !important;
+  margin-left: 38px !important;
+}
+.helper2 {
+  width: 80% !important;
+  align-self: flex-end;
+}
+.helper2 {
+  width: 20% !important;
+  align-self: flex-end;
+}

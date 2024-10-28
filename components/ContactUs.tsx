@@ -57,7 +57,7 @@ const ContactUs = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center mt-24 mb-24 bg-black">
+    <div className="flex flex-col items-center justify-center mt-24  bg-black">
       <h2 className=" text-white text-start font-semibold text-5xl ">
         Contact Us
       </h2>
