@@ -12,6 +12,7 @@ interface Property {
   developer: string;
   paymentPlan: string;
   propertyType: string;
+  project: string;
   // Add other fields as needed
 }
 
@@ -44,6 +45,7 @@ const FilteredProperties: React.FC<FilteredPropertiesProps> = ({
             developer={property.developer}
             paymentPlan={property.paymentPlan}
             propertyType={property.propertyType}
+            project={property.project}
           />
         ))}
       </div>

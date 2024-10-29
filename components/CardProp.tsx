@@ -15,6 +15,7 @@ interface CardProps {
   paymentPlan: string;
 
   propertyType: string;
+  project: string;
 }
 
 const CardProp: React.FC<CardProps> = ({
@@ -26,6 +27,7 @@ const CardProp: React.FC<CardProps> = ({
   delivery,
   developer,
   paymentPlan,
+  project,
 
   propertyType,
 }) => {
@@ -78,11 +80,15 @@ const CardProp: React.FC<CardProps> = ({
       {/* Content Section */}
       <div className="bg-[#2A2A2A] text-white p-4 flex flex-col justify-between h-1/2">
         <div className="text-start">
-          <p className="text-2xl font-bold mb-2">
-            Price {currencySymbol} {convertedPrice}{" "}
-            {status === "For Sale" ? "" : "p/m"}
-          </p>
-          <p className="text-lg font-medium">Bedrooms: {bedrooms}</p>
+          <p className="text-2xl font-bold">{project}</p>
+          <div className="flex">
+            <p>Starting price</p>
+            <p className="text-lg font-medium mb-2 text-orange-500">
+              {currencySymbol} {convertedPrice}{" "}
+              {status === "For Sale" ? "" : "p/m"}
+            </p>
+          </div>
+
           <p className="text-base font-medium">{propertyType}</p>
           <p className="text-base font-medium">
             to be delivered by: {delivery}

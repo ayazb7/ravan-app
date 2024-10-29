@@ -9,14 +9,14 @@ import Card from "./Card";
 
 const Services = () => {
   return (
-    <div className="relative h-[70vh] w-full ">
+    <div className="relative h-[75vh] w-full ">
       {/* <p
         className="z-20 absolute top-8 w-full text-center text-lg text-white"
         style={{ marginTop: "4rem" }}
       >
         Our Services
       </p> */}
-      <h2 className="z-20 absolute top-16 w-full text-center text-6xl text-white font-bold">
+      <h2 className="z-20 absolute top-16 w-full text-center text-4xl text-white font-bold">
         Our Services
       </h2>
       <Image
@@ -24,7 +24,7 @@ const Services = () => {
         alt="gray arc to write text on"
         className="z-10 absolute w-full h-full object-cover"
       />
-      <div className="absolute z-30 w-[70%] mx-auto left-0 right-0 top-[20vh] grid grid-cols-3 gap-10">
+      <div className="absolute z-30 w-[60%] mx-auto left-0 right-0 top-[20vh] grid grid-cols-3 gap-10">
         <Card
           imageSrc={special}
           text="Connect with a Specialist"
