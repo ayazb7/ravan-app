@@ -54,6 +54,7 @@ const Discover = () => {
           developer={"property.developer"}
           paymentPlan={"property.paymentPlan"}
           propertyType={"property.propertyType"}
+          project="flianflij"
         />
         <CardProp
           key={"11"}
@@ -65,6 +66,7 @@ const Discover = () => {
           developer={"property.developer"}
           paymentPlan={"property.paymentPlan"}
           propertyType={"property.propertyType"}
+          project="lfnlianf"
         />
 
         <CardProp
@@ -77,6 +79,7 @@ const Discover = () => {
           developer={"property.developer"}
           paymentPlan={"property.paymentPlan"}
           propertyType={"property.propertyType"}
+          project="lfnalknm"
         />
       </div>
     </div>
