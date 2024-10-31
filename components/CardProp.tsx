@@ -1,74 +1,67 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { useCurrency } from "@/context/currencyContext";
 import EmblaCarousel from "./EmblaCarousel2";
+import useSWR from "swr";
 
 interface CardProps {
   status: string;
   bedrooms: string;
   price: number;
-  photoUrl: string;
 
   delivery: string;
   developer: string;
   paymentPlan: string;
-
   propertyType: string;
   project: string;
+  photoUrl: string;
 }
 
 const CardProp: React.FC<CardProps> = ({
   status,
   bedrooms,
   price,
-  photoUrl,
-
   delivery,
   developer,
   paymentPlan,
   project,
-
   propertyType,
+  photoUrl,
 }) => {
-  price = price * 1000000;
   const { currency, conversionRates } = useCurrency();
-  const [convertedPrice, setConvertedPrice] = useState(price);
+  const [convertedPrice, setConvertedPrice] = useState(price * 1000000);
   const [currencySymbol, setCurrencySymbol] = useState("AED");
   const [isHovered, setIsHovered] = useState(false);
+  const [slides, setSlides] = useState([]);
+
+  // Convert price based on currency and conversion rate
 
   useEffect(() => {
     if (conversionRates && conversionRates[currency]) {
-      setConvertedPrice(price * conversionRates[currency]);
+      setConvertedPrice(price * 1000000 * conversionRates[currency]);
       setCurrencySymbol(currency);
     }
   }, [currency, price, conversionRates]);
 
-  // Slides array with image paths
-  const [slides, setSlides] = useState([]);
-  const folderName = "buggati-binghati"; // Specify your folder name here
+  // Fetch images for carousel
+  const folderName = "buggatibinghati";
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data, error } = useSWR(
+    `/api/getImages?folder=${folderName}`,
+    fetcher
+  );
 
+  // Set slides only when data is available
   useEffect(() => {
-    const fetchSlides = async () => {
-      try {
-        const response = await fetch(`/api/getImages?folder=${folderName}`);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        setSlides(data);
-      } catch (error) {
-        console.error("Error fetching slides:", error);
-      }
-    };
-
-    fetchSlides();
-  }, [folderName]);
+    if (data) {
+      setSlides(data);
+    }
+  }, [data]);
 
   return (
     <div
       className="relative overflow-hidden shadow-lg cursor-pointer rounded-2xl flex flex-col"
-      style={{ width: "350px", height: "550px" }}
+      style={{ width: "350px", height: "600px" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -81,20 +74,20 @@ const CardProp: React.FC<CardProps> = ({
       <div className="bg-[#2A2A2A] text-white p-4 flex flex-col justify-between h-1/2">
         <div className="text-start">
           <p className="text-2xl font-bold">{project}</p>
-          <div className="flex">
-            <p>Starting price</p>
-            <p className="text-lg font-medium mb-2 text-orange-500">
+          <p className="text-sm font-medium">by: {developer}</p>
+          <div className="flex items-start">
+            <p className="text-lg">Starting price:</p>
+            <p className="text-lg font-medium  text-orange-500 ml-1">
               {currencySymbol} {convertedPrice}{" "}
               {status === "For Sale" ? "" : "p/m"}
             </p>
           </div>
 
-          <p className="text-base font-medium">{propertyType}</p>
-          <p className="text-base font-medium">
-            to be delivered by: {delivery}
-          </p>
-          <p className="text-base font-medium">Developer: {developer}</p>
-          <p className="text-base font-medium">payment plan: {paymentPlan}</p>
+          <p className="text-base font-medium">Handover: {delivery}</p>
+
+          <p className="text-base font-medium">Payment plan: {paymentPlan}</p>
+          {/* <p>Properties avaliable:</p>
+          <p className="text-base font-medium">{propertyType}</p> */}
         </div>
 
         <div className="flex space-x-4 mt-4">

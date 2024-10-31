@@ -4,7 +4,7 @@ import bg from "@/logos/servicebg.png";
 import cardBg from "@/logos/cardImage.png";
 import offPlan from "@/logos/offPlan.png";
 import resedential from "@/logos/resedential.jpg";
-import special from "@/logos/special.jpg";
+import special from "@/logos/callcenter.jpg";
 import Card from "./Card";
 
 const Services = () => {

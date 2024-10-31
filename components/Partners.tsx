@@ -52,7 +52,7 @@
 
 import React from "react";
 import EmblaCarousel from "@/components/EmblaCarousel";
-import binghatti from "@/logos/binghatti.jpeg";
+import binghatti from "@/logos/binghatti5.png";
 import sobha from "@/logos/sobha.png";
 import damac from "@/logos/damac.png";
 import danbure from "@/logos/danbure.png";
@@ -61,7 +61,7 @@ import { useRouter } from "@/node_modules/next/navigation";
 const Partners: React.FC = () => {
   const router = useRouter();
   const SLIDES = [
-    <img src={binghatti.src} className="w-[15vw]" alt="emaar" />,
+    <img src={binghatti.src} alt="emaar" />,
     <img src={sobha.src} alt="sobha" onClick={() => router.push("/sobha")} />,
     <img src={damac.src} alt="damac" />,
     <img src={danbure.src} alt="danbure" />,

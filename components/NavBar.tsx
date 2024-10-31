@@ -124,7 +124,7 @@ const NavBar: React.FC = () => {
       >
         <div className="flex items-center cursor-pointer">
           <Link href={"/"}>
-            <Image src={logo} alt="Highend logo" height={70} width={70} />
+            <Image src={logo} alt="Highend logo" height={80} width={80} />
           </Link>
         </div>
         <div className="flex justify-center items-center text-my_blue h-full">
@@ -164,7 +164,7 @@ const NavBar: React.FC = () => {
           <Link href="/en/about" className={cn(linkHoverEffectStyle())}>
             <p className="text-lg font-semibold">Communities</p>
           </Link>
-          <Link href="/en/about" className={cn(linkHoverEffectStyle())}>
+          <Link href="/offplan" className={cn(linkHoverEffectStyle())}>
             <p className="text-lg font-semibold">Off Plan</p>
           </Link>
           <Link href="/en/about" className={cn(linkHoverEffectStyle())}>
@@ -183,8 +183,8 @@ const NavBar: React.FC = () => {
               <div className="flex items-center">
                 <CircleFlag
                   countryCode={option.countryCode}
-                  height={24}
-                  width={24}
+                  height={20}
+                  width={20}
                 />
                 <span className="ml-2">{option.label}</span>
               </div>

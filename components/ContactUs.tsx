@@ -58,7 +58,7 @@ const ContactUs = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center mt-24  bg-black">
-      <h2 className=" text-white text-start font-semibold text-5xl ">
+      <h2 className=" text-white text-start font-semibold text-4xl ">
         Contact Us
       </h2>
       <div className="pb-10">
@@ -66,23 +66,30 @@ const ContactUs = () => {
           <Image
             src={ravan_logo}
             alt="ravan logo small with black background"
-            height={70}
+            height={50}
             width={70}
           />
           <div className="bg-white w-[0.1vw] h-[10vh] mx-5"></div>
           <div className="flex flex-col space-y-5">
             <div className="flex gap-3">
               <Image src={phone} alt="phone icon for phone number" />
-              <p className="text-white">{COMPANY_INFO.phoneNumber}</p>
+              <a
+                href={`tel:${COMPANY_INFO.phoneNumber}`}
+                className="text-white"
+              >
+                {COMPANY_INFO.phoneNumber}
+              </a>
             </div>
             <div className="flex gap-3">
               <Image src={Email_logo} alt="mail icon for our email" />
-              <p className="text-white">{COMPANY_INFO.email}</p>
+              <a href={`mailto:${COMPANY_INFO.email}`} className="text-white">
+                {COMPANY_INFO.email}
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center w-[70vw] h-full">
+      <div className="flex flex-col items-center w-[60vw] h-full">
         <div className="flex flex-col space-y-6 w-full flex-grow">
           <div className="flex space-x-6">
             <input

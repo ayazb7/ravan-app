@@ -66,10 +66,10 @@ const ListProperty = () => {
 
   return (
     <div className="flex flex-col mt-28 items-center justify-center ">
-      <h2 className="text-white text-start font-semibold text-5xl pb-10">
+      <h2 className="text-white text-start font-semibold text-4xl pb-10">
         List Your Property
       </h2>
-      <div className="flex flex-col items-center w-[70vw] h-full">
+      <div className="flex flex-col items-center w-[60vw] h-full">
         <div className="flex flex-col space-y-6 w-full flex-grow">
           <div className="flex space-x-6">
             <input
@@ -119,7 +119,7 @@ const ListProperty = () => {
             value={messageval}
             onChange={changeMessage}
             name="message"
-            className="w-full rounded-xl border-2 border-[#BCB9B9] p-4 flex-grow resize-none h-[30vh] focus:border-[#2F3757]"
+            className="w-full rounded-xl border-2 border-[#BCB9B9] p-4 flex-grow resize-none h-[20vh] focus:border-[#2F3757]"
           />
         </div>
       </div>

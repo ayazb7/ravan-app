@@ -46,15 +46,21 @@ const Footer = () => {
           <a className="mb-1 text-white text-xl font-bold">Information</a>
           <div className="flex w-full space-x-3">
             <Image src={home_logo} alt="Logo" />
-            <p className="text-white text-base font-medium">
+            <Link
+              href={COMPANY_INFO.maps}
+              className="text-white text-base font-medium"
+            >
               {COMPANY_INFO.address}
-            </p>
+            </Link>
           </div>
           <div className="flex w-full space-x-3">
             <Image src={Email_logo} alt="Logo" />
-            <p className="text-white text-base font-medium">
+            <a
+              href={`mailto:${COMPANY_INFO.email}`}
+              className="text-white text-base font-medium"
+            >
               {COMPANY_INFO.email}
-            </p>
+            </a>
           </div>
         </div>
       </div>
@@ -97,15 +103,21 @@ const Footer = () => {
           <a className="mb-1 text-white text-xl font-bold">Information</a>
           <div className="flex w-full space-x-3">
             <Image src={home_logo} alt="Logo" />
-            <p className="text-white text-base font-medium">
+            <Link
+              href={COMPANY_INFO.maps}
+              className="text-white text-base font-medium"
+            >
               {COMPANY_INFO.address}
-            </p>
+            </Link>
           </div>
           <div className="flex w-full space-x-3">
             <Image src={Email_logo} alt="Logo" />
-            <p className="text-white text-base font-medium">
+            <a
+              href={`mailto:${COMPANY_INFO.email}`}
+              className="text-white text-base font-medium"
+            >
               {COMPANY_INFO.email}
-            </p>
+            </a>
           </div>
         </div>
       </div>

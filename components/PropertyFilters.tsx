@@ -26,18 +26,26 @@ const PropertyFilters = () => {
   const handleDeveloperSelect = (key: string) => setDeveloper(key);
 
   useEffect(() => {
+    const buildBedroomsQuery = () => {
+      if (bedrooms === "4+") {
+        return "bedrooms=4,5,6,7,8,9"; // Assuming you want to check for 4 or more bedrooms
+      }
+      return `bedrooms=${bedrooms}`;
+    };
+
     const query = [
-      bedrooms && `bedrooms=${bedrooms}`,
-      priceRange && `priceRange=${priceRange}`,
-      propertyType && `propertyType=${propertyType}`,
-      paymentPlan && `paymentPlan=${paymentPlan}`,
-      projectDelivery && `projectDelivery=${projectDelivery}`,
-      developer && `developer=${developer}`,
+      bedrooms !== "Bedrooms" && buildBedroomsQuery(),
+      priceRange !== "Price Range" && `priceRange=${priceRange}`,
+      propertyType !== "Property Type" && `propertyType=${propertyType}`,
+      paymentPlan !== "Payment Plan" && `paymentPlan=${paymentPlan}`,
+      projectDelivery !== "Project Delivery" &&
+        `projectDelivery=${projectDelivery}`,
+      developer !== "Developer" && `developer=${developer}`,
     ]
       .filter(Boolean)
       .join("&");
 
-    router.push(`/commercial?${query}`);
+    router.push(`/offplan?${query}`);
   }, [
     bedrooms,
     priceRange,

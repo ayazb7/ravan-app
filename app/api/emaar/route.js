@@ -1,9 +1,9 @@
-import Property from "@/app/models/Property";
+import Project from "@/app/models/Project";
 import { NextResponse } from "next/server";
 import { parse } from "url";
 export async function GET() {
   try {
-    const properties = await Property.find({ developer: "Sobha" });
+    const properties = await Project.find({ developer: "Sobha" });
 
     return NextResponse.json({ properties }, { status: 200 });
   } catch (err) {
@@ -17,7 +17,7 @@ export async function POST(req) {
     const body = await req.json();
     const ticketData = body.formData;
 
-    await Property.create(ticketData);
+    await Project.create(ticketData);
 
     return NextResponse.json({ message: "Ticket Created" }, { status: 201 });
   } catch (err) {
