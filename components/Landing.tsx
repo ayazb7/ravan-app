@@ -34,9 +34,11 @@ const Landing = () => {
           <button className="btn-custom hover:bg-black hover:rounded-lg">
             Residential
           </button>
-          <button className="btn-custom hover:bg-black hover:rounded-lg">
-            Off Plan
-          </button>
+          <Link href="/offplan">
+            <button className="btn-custom hover:bg-black hover:rounded-lg">
+              Off Plan
+            </button>
+          </Link>
         </div>
       </div>
     </div>
