@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useCurrency } from "@/context/currencyContext";
 import EmblaCarousel from "./EmblaCarousel2";
 import useSWR from "swr";
+import Link from "@/node_modules/next/link";
 
 interface CardProps {
   status: string;
@@ -33,6 +34,7 @@ const CardProp: React.FC<CardProps> = ({
   const [currencySymbol, setCurrencySymbol] = useState("AED");
   const [isHovered, setIsHovered] = useState(false);
   const [slides, setSlides] = useState([]);
+  console.log(photoUrl);
 
   // Convert price based on currency and conversion rate
 
@@ -46,10 +48,7 @@ const CardProp: React.FC<CardProps> = ({
   // Fetch images for carousel
   const folderName = "buggatibinghati";
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data, error } = useSWR(
-    `/api/getImages?folder=${folderName}`,
-    fetcher
-  );
+  const { data, error } = useSWR(`/api/getImages?folder=${photoUrl}`, fetcher);
 
   // Set slides only when data is available
   useEffect(() => {
@@ -79,7 +78,7 @@ const CardProp: React.FC<CardProps> = ({
             <p className="text-lg">Starting price:</p>
             <p className="text-lg font-medium  text-orange-500 ml-1">
               {currencySymbol} {convertedPrice}{" "}
-              {status === "For Sale" ? "" : "p/m"}
+              {/* {status === "For Sale" ? "" : "p/m"} */}
             </p>
           </div>
 
@@ -94,9 +93,14 @@ const CardProp: React.FC<CardProps> = ({
           <button className="border border-white text-white bg-transparent py-2 px-4 rounded-full w-1/2 hover:bg-white hover:text-black transition-colors duration-300">
             Contact
           </button>
-          <button className="bg-[#6EACDA] text-white py-2 px-4 rounded-full w-1/2 hover:bg-[#5998C7] transition-colors duration-300">
-            Explore
-          </button>
+          <Link
+            href={`\projects?project=${project}&developer=${developer}&price=${price}&paymentPlan=${paymentPlan}&handover=${delivery}&photos=${photoUrl}`}
+            className="w-[10vw]"
+          >
+            <button className="bg-[#6EACDA] text-white py-2 px-4 rounded-full w-full hover:bg-[#5998C7] transition-colors duration-300">
+              Explore
+            </button>
+          </Link>
         </div>
       </div>
     </div>

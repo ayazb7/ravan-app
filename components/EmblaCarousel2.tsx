@@ -29,21 +29,27 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
 
   return (
     <section className="emblas">
-      <div className="embla__viewport w-[30vw] h-[30vh]" ref={emblaRef}>
-        <div className="embla__container">
-          {slides.map((src, index) => (
-            <div className="embla__slide" key={index}>
-              <Image
-                src={src}
-                alt={`Slide ${index + 1}`}
-                width={500}
-                height={300}
-                objectFit="cover"
-              />
-            </div>
-          ))}
+      {slides.length > 0 && (
+        <div className="embla__viewport w-[30vw] h-[40vh]" ref={emblaRef}>
+          <div className="embla__container">
+            {slides.map((src, index) => (
+              <div
+                className="embla__slide relative w-full h-full"
+                key={index}
+                style={{ width: "30vw", height: "38vh" }} // Set slide dimensions here
+              >
+                <Image
+                  src={src}
+                  alt={`Slide ${index + 1}`}
+                  layout="fill" // Makes the image fill the container
+                  objectFit="cover" // Ensures the image covers the container while maintaining aspect ratio
+                  quality={100} // Optional: Increase image quality if needed
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="embla__controls">
         <div className="embla__buttons absolute top-[50%] space-x-28">

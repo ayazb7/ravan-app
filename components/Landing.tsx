@@ -21,8 +21,8 @@ const Landing = () => {
         ></Video>
         <div className="video-overlay"></div>
       </div>
-      <div className="absolute flex flex-col items-center justify-center">
-        <h1 className="text-white font-black md:text-4xl text-base w-[65vw] md:w-[100vw]  text-center mb-8">
+      <div className="absolute flex flex-col items-center justify-center w-[80]">
+        <h1 className="text-white font-black md:text-4xl text-base w-[65vw]   text-center mb-8">
           Turning Property Dreams into Reality
         </h1>
         <div className="flex flex-wrap justify-center space-x-4 space-y-4 md:space-x-4 md:space-y-0 md:flex-nowrap">
