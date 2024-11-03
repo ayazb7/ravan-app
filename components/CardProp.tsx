@@ -50,7 +50,15 @@ const CardProp: React.FC<CardProps> = ({
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(
     photoUrl
-      ? `/api/getImages${photoUrl === "solis" ? "2" : ""}?folder=${photoUrl}`
+      ? photoUrl === "lagoons"
+        ? `/api/getImages3?folder=${photoUrl}`
+        : photoUrl === "hills"
+        ? `/api/getImages4?folder=${photoUrl}`
+        : photoUrl === "siniyaIsland"
+        ? `/api/getImages?folder=${photoUrl}`
+        : photoUrl === "solis"
+        ? `/api/getImages2?folder=${photoUrl}`
+        : null
       : null,
     fetcher
   );
