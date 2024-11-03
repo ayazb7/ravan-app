@@ -4,9 +4,8 @@ import { NextResponse } from "next/server";
 export async function GET(req) {
   try {
     const url = new URL(req.url);
-    const searchParams = new URLSearchParams(url.searchParams);
 
-    // Extract query parameters
+    // Extract query parameters directly from the URL
     const {
       bedrooms,
       priceRange,
@@ -15,7 +14,7 @@ export async function GET(req) {
       projectDelivery,
       developer,
       project,
-    } = Object.fromEntries(searchParams.entries());
+    } = Object.fromEntries(url.searchParams.entries());
 
     // Construct the query object
     const query = {};
@@ -38,7 +37,7 @@ export async function GET(req) {
     }
 
     // Property type filtering
-    if (propertyType && Type !== "Property Type") {
+    if (propertyType && propertyType !== "Property Type") {
       query.projectProperties = {
         ...query.projectProperties,
         $regex: new RegExp(propertyType, "i"),
