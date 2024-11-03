@@ -48,7 +48,12 @@ const CardProp: React.FC<CardProps> = ({
   // Fetch images for carousel
   const folderName = "buggatibinghati";
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data, error } = useSWR(`/api/getImages?folder=${photoUrl}`, fetcher);
+  const { data, error } = useSWR(
+    photoUrl
+      ? `/api/getImages${photoUrl === "solis" ? "2" : ""}?folder=${photoUrl}`
+      : null,
+    fetcher
+  );
 
   // Set slides only when data is available
   useEffect(() => {
