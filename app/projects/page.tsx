@@ -22,7 +22,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
       try {
         if (photos) {
           const res = await fetch(
-            `http://localhost:3000/api/getImages?folder=${photos}`
+            `http://localhost:3000/api/getImages5?folder=${photos}`
           );
           if (!res.ok)
             throw new Error(`Failed to fetch images: ${res.statusText}`);

@@ -52,7 +52,7 @@ const CardProp: React.FC<CardProps> = ({
     photoUrl
       ? photoUrl === "lagoons"
         ? `/api/getImages3?folder=${photoUrl}`
-        : photoUrl === "hills"
+        : photoUrl === "hills2"
         ? `/api/getImages4?folder=${photoUrl}`
         : photoUrl === "siniyaIsland"
         ? `/api/getImages?folder=${photoUrl}`

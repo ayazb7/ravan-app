@@ -3,9 +3,11 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
   try {
-    const url = new URL(req.url);
+    // Use req.nextUrl instead of req.url
+    const { searchParams } = req.nextUrl; // Directly destructure searchParams
+    const params = Object.fromEntries(searchParams); // Convert searchParams to a plain object
 
-    // Extract query parameters directly from the URL
+    // Extract query parameters
     const {
       bedrooms,
       priceRange,
@@ -14,18 +16,17 @@ export async function GET(req) {
       projectDelivery,
       developer,
       project,
-    } = Object.fromEntries(url.searchParams.entries());
+    } = params;
 
     // Construct the query object
     const query = {};
 
-    // Bedrooms filtering: checks for "4+" condition and other values
+    // Bedrooms filtering
     if (bedrooms && bedrooms !== "Bedrooms") {
-      if (bedrooms === "4+") {
-        query.projectProperties = { $regex: "[4-9]\\+?", $options: "i" };
-      } else {
-        query.projectProperties = { $regex: bedrooms, $options: "i" };
-      }
+      query.projectProperties = {
+        $regex: bedrooms === "4+" ? "[4-9]\\+?" : bedrooms,
+        $options: "i",
+      };
     }
 
     // Price range filtering
