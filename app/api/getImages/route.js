@@ -24,7 +24,7 @@ export async function GET(req) {
     const files = fs.readdirSync(directoryPath);
 
     // Filter files to ensure you're not exceeding memory limits
-    const slides = files.map((file) => `/${folder}/${file}`).slice(0, 10); // Limit to first 10 images
+    const slides = files.map((file) => `/${folder}/${file}`).slice(0, 4); // Limit to first 10 images
 
     // Send the slides array as a JSON response
     return new Response(JSON.stringify(slides), {
