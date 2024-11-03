@@ -2,8 +2,7 @@ import fs from "fs";
 import path from "path";
 
 // Define the GET handler
-export async function GET(req, { params }) {
-  // Extract folder name from the URL parameters
+export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const folder = searchParams.get("folder");
 
@@ -24,8 +23,8 @@ export async function GET(req, { params }) {
     // Read the files in the directory
     const files = fs.readdirSync(directoryPath);
 
-    // Map the file names to URLs
-    const slides = files.map((file) => `/${folder}/${file}`);
+    // Filter files to ensure you're not exceeding memory limits
+    const slides = files.map((file) => `/${folder}/${file}`).slice(0, 10); // Limit to first 10 images
 
     // Send the slides array as a JSON response
     return new Response(JSON.stringify(slides), {
