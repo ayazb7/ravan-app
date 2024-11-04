@@ -1,50 +1,27 @@
 "use client";
 import { useEffect, useState } from "react";
+import "@/app/globals.css";
+import { LayoutGridDemo } from "@/components/testing";
+
 interface SearchParams {
   project?: string;
   developer?: string;
   price?: string;
   paymentPlan?: string;
   handover?: string;
-  photos?: string;
+  photos?: string; // This should be the folder name
 }
-import "@/app/globals.css";
-import { LayoutGridDemo } from "@/components/testing";
 
 export default function Page({ searchParams }: { searchParams: SearchParams }) {
-  console.log(searchParams);
-  const [backgroundImage, setBackgroundImage] = useState(null);
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
   const { project, developer, price, paymentPlan, handover, photos } =
     searchParams;
-  console.log(photos);
+
   useEffect(() => {
-    let isMounted = true; // Track if the component is mounted
-
-    async function fetchImage() {
-      try {
-        if (photos) {
-          const res = await fetch(
-            `http://localhost:3000/api/getImages5?folder=${photos}`
-          );
-          if (!res.ok)
-            throw new Error(`Failed to fetch images: ${res.statusText}`);
-          const slides = await res.json();
-          if (slides && slides.length > 0 && isMounted) {
-            setBackgroundImage(slides[0]);
-          } else if (isMounted) {
-            console.warn(`No images found for folder: ${photos}`);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
+    // Set the background image directly using the first image path
+    if (photos) {
+      setBackgroundImage(`/${photos}/1.jpg`); // Assuming the image is named "1.jpg"
     }
-
-    fetchImage();
-
-    return () => {
-      isMounted = false; // Set to false when unmounting
-    };
   }, [photos]);
 
   return (
@@ -88,8 +65,9 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
           </div>
         </div>
       </div>
+
       <div className="flex items-center justify-center h-[80vh] bg-black ">
-        <div className="flex flex-col  justify-center ml-10 mr-40 w-[30vw]">
+        <div className="flex flex-col justify-center ml-10 mr-40 w-[30vw]">
           <h2 className="text-gray-500 font-semibold mb-10">
             About the project
           </h2>
@@ -106,23 +84,18 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
         <div className="bg-white h-[40vh] w-[0.1vw]"></div>
         <div className="flex flex-col items-center w-[30vw] h-[70%] justify-between">
           <div className="text-center flex flex-col justify-between items-center ">
-            <h3 className="text-gray-500 font-semibold mb-5 ">
-              Starting Price
-            </h3>
-
+            <h3 className="text-gray-500 font-semibold mb-5">Starting Price</h3>
             <p className="text-4xl font-bold text-white">{price} Million</p>
           </div>
 
           <div className="bg-white h-[0.1vh] w-[80%]"></div>
           <div className="text-center flex flex-col justify-between items-center ">
-            <h3 className="text-gray-500 font-semibold mb-5 ">Handover</h3>
-
+            <h3 className="text-gray-500 font-semibold mb-5">Handover</h3>
             <p className="text-4xl font-bold text-white">{handover}</p>
           </div>
           <div className="bg-white h-[0.1vh] w-[80%]"></div>
           <div className="text-center flex flex-col justify-between items-center ">
-            <h3 className="text-gray-500 font-semibold mb-5 ">Payment Plan</h3>
-
+            <h3 className="text-gray-500 font-semibold mb-5">Payment Plan</h3>
             <p className="text-4xl font-bold text-white">{paymentPlan}</p>
           </div>
         </div>

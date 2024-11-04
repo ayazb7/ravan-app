@@ -2,20 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { useCurrency } from "@/context/currencyContext";
 import EmblaCarousel from "./EmblaCarousel2";
-import useSWR from "swr";
-import Link from "@/node_modules/next/link";
+import Link from "next/link";
 
 interface CardProps {
   status: string;
   bedrooms: string;
   price: number;
-
   delivery: string;
   developer: string;
   paymentPlan: string;
   propertyType: string;
   project: string;
-  photoUrl: string;
+  photoUrl: string; // This should be the folder name
 }
 
 const CardProp: React.FC<CardProps> = ({
@@ -33,11 +31,9 @@ const CardProp: React.FC<CardProps> = ({
   const [convertedPrice, setConvertedPrice] = useState(price * 1000000);
   const [currencySymbol, setCurrencySymbol] = useState("AED");
   const [isHovered, setIsHovered] = useState(false);
-  const [slides, setSlides] = useState([]);
-  console.log(photoUrl);
+  const [slides, setSlides] = useState<string[]>([]);
 
   // Convert price based on currency and conversion rate
-
   useEffect(() => {
     if (conversionRates && conversionRates[currency]) {
       setConvertedPrice(price * 1000000 * conversionRates[currency]);
@@ -45,34 +41,22 @@ const CardProp: React.FC<CardProps> = ({
     }
   }, [currency, price, conversionRates]);
 
-  // Fetch images for carousel
-  const folderName = "buggatibinghati";
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data, error } = useSWR(
-    photoUrl
-      ? photoUrl === "lagoons"
-        ? `/api/getImages3?folder=${photoUrl}`
-        : photoUrl === "hills2"
-        ? `/api/getImages4?folder=${photoUrl}`
-        : photoUrl === "siniyaIsland"
-        ? `/api/getImages?folder=${photoUrl}`
-        : photoUrl === "solis"
-        ? `/api/getImages2?folder=${photoUrl}`
-        : null
-      : null,
-    fetcher
-  );
-
-  // Set slides only when data is available
+  // Manually create image paths for slides
   useEffect(() => {
-    if (data) {
-      setSlides(data);
+    if (photoUrl) {
+      const slideImages = [
+        `/${photoUrl}/1.jpg`,
+        `/${photoUrl}/2.jpg`,
+        `/${photoUrl}/3.jpg`,
+        `/${photoUrl}/4.jpg`,
+      ];
+      setSlides(slideImages);
     }
 
     return () => {
       setSlides([]); // Clear slides on unmount or when photoUrl changes
     };
-  }, [data]);
+  }, [photoUrl]);
 
   return (
     <div
@@ -93,17 +77,13 @@ const CardProp: React.FC<CardProps> = ({
           <p className="text-sm font-medium">by: {developer}</p>
           <div className="flex items-start">
             <p className="text-lg">Starting price:</p>
-            <p className="text-lg font-medium  text-orange-500 ml-1">
-              {currencySymbol} {convertedPrice}{" "}
-              {/* {status === "For Sale" ? "" : "p/m"} */}
+            <p className="text-lg font-medium text-orange-500 ml-1">
+              {currencySymbol} {convertedPrice}
             </p>
           </div>
 
           <p className="text-base font-medium">Handover: {delivery}</p>
-
           <p className="text-base font-medium">Payment plan: {paymentPlan}</p>
-          {/* <p>Properties avaliable:</p>
-          <p className="text-base font-medium">{propertyType}</p> */}
         </div>
 
         <div className="flex space-x-4 mt-4">
