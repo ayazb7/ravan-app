@@ -68,6 +68,10 @@ const CardProp: React.FC<CardProps> = ({
     if (data) {
       setSlides(data);
     }
+
+    return () => {
+      setSlides([]); // Clear slides on unmount or when photoUrl changes
+    };
   }, [data]);
 
   return (

@@ -18,6 +18,8 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
     searchParams;
   console.log(photos);
   useEffect(() => {
+    let isMounted = true; // Track if the component is mounted
+
     async function fetchImage() {
       try {
         if (photos) {
@@ -27,9 +29,9 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
           if (!res.ok)
             throw new Error(`Failed to fetch images: ${res.statusText}`);
           const slides = await res.json();
-          if (slides && slides.length > 0) {
+          if (slides && slides.length > 0 && isMounted) {
             setBackgroundImage(slides[0]);
-          } else {
+          } else if (isMounted) {
             console.warn(`No images found for folder: ${photos}`);
           }
         }
@@ -37,8 +39,14 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
         console.error("Error fetching images:", error);
       }
     }
+
     fetchImage();
+
+    return () => {
+      isMounted = false; // Set to false when unmounting
+    };
   }, [photos]);
+
   return (
     <div>
       {/* Background Image Section */}
