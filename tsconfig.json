@@ -6,8 +6,9 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // Added for compatibility
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // Ensure Node module resolution is used
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -28,7 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/projects/[projectName].js",
-
     "app/projects/page.tsx"
   ],
   "exclude": ["node_modules"]
