@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true, // Added for compatibility
     "module": "esnext",
-    "moduleResolution": "node", // Ensure Node module resolution is used
+    "moduleResolution": "nodenext", // Ensure Node module resolution is used
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
