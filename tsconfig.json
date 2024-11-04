@@ -6,9 +6,9 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true, // Added for compatibility
+    "allowSyntheticDefaultImports": true,
     "module": "esnext",
-    "moduleResolution": "nodenext", // Ensure Node module resolution is used
+    "moduleResolution": "node", // Set module resolution to node
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -26,6 +26,8 @@
     "@types",
     "video.d.ts",
     "next-env.d.ts",
+    "next-video.d.ts",
+    "declarations.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",

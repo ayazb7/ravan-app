@@ -1,14 +1,14 @@
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 import NavBar from "@/components/NavBar";
 import { CurrencyProvider } from "@/context/currencyContext";
 import type { Metadata } from "next";
-import { Montserrat } from 'next/font/google';
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
-  subsets: ['latin'], 
-  variable: '--font-montserrat',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], 
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <CurrencyProvider> 
+      <CurrencyProvider>
         <body className={`${montserrat.variable} antialiased`}>
           <NavBar />
           {children}
