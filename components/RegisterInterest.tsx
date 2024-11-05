@@ -5,7 +5,7 @@ import ravan_logo from "@/logos/ravan_logo.png";
 import phone from "@/logos/phone.png";
 import { COMPANY_INFO } from "@/config.js";
 import Email_logo from "@/logos/mail-01.svg";
-const ContactUs = () => {
+const RegisterInterest = () => {
   const [firsval, setfirstVal] = useState("");
   const [lastval, setlastVal] = useState("");
   const [Phoneval, setPhonetVal] = useState("");
@@ -60,19 +60,13 @@ const ContactUs = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-24  bg-black">
       <h2 className=" text-white text-start font-semibold text-4xl ">
-        Contact Us
+        Register Interest
       </h2>
       <div className="pb-10">
         <div className="flex pt-10">
-          <Image
-            src={ravan_logo}
-            alt="ravan logo small with black background"
-            height={50}
-            width={70}
-          />
-          <div className="bg-white w-[0.1vw] h-[10vh] mx-5"></div>
           <div className="flex flex-col space-y-5">
-            <div className="flex gap-3">
+            <div className="flex gap-3 text-white">
+              Our Phone :
               <Image src={phone} alt="phone icon for phone number" />
               <a
                 href={`tel:${COMPANY_INFO.phoneNumber}`}
@@ -81,7 +75,8 @@ const ContactUs = () => {
                 {COMPANY_INFO.phoneNumber}
               </a>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 text-white">
+              Our Email:
               <Image src={Email_logo} alt="mail icon for our email" />
               <a href={`mailto:${COMPANY_INFO.email}`} className="text-white">
                 {COMPANY_INFO.email}
@@ -153,4 +148,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default RegisterInterest;
