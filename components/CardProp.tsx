@@ -83,7 +83,6 @@ const CardProp: React.FC<CardProps> = ({
           </div>
 
           <p className="text-base font-medium">Handover: {delivery}</p>
-          <p className="text-base font-medium">Payment plan: {paymentPlan}</p>
         </div>
 
         <div className="flex space-x-4 mt-4">

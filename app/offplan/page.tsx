@@ -1,7 +1,7 @@
 // app/commercial/page.tsx (assuming this file structure)
 import PropertyFilters from "@/components/PropertyFilters";
 import FilteredProperties from "@/components/FilteredProperties";
-import SearchBg from "@/logos/Searchbg.png";
+import SearchBg from "@/logos/projectsBg.jpg";
 import Link from "next/link";
 
 interface SearchParams {
