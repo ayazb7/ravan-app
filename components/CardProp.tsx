@@ -77,8 +77,8 @@ const CardProp: React.FC<CardProps> = ({
           <p className="text-sm font-medium">by: {developer}</p>
           <div className="flex items-start">
             <p className="text-lg">Starting price:</p>
-            <p className="text-lg font-medium text-orange-500 ml-1">
-              {currencySymbol} {convertedPrice}
+            <p className="text-lg font-medium text-white ml-1">
+              {currencySymbol} {convertedPrice.toLocaleString()}
             </p>
           </div>
 

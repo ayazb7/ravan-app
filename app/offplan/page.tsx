@@ -26,7 +26,7 @@ async function fetchProperties(searchParams: SearchParams) {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/offplan?bedrooms=${
+      `https://yassin811-app.vercel.app/api/offplan?bedrooms=${
         bedrooms || ""
       }&priceRange=${priceRange || ""}&propertyType=${
         propertyType || ""
