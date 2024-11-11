@@ -1,14 +1,10 @@
 import Project from "@/app/models/Project";
 import { NextResponse } from "next/server";
 
-// Set the route to be dynamic
-export const dynamic = "force-dynamic";
-
 export async function GET(req) {
   try {
-    // Create URL instance to access searchParams
-    const url = new URL(req.url);
-    const { searchParams } = url;
+    // Use req.nextUrl instead of req.url
+    const { searchParams } = req.nextUrl; // Directly destructure searchParams
     const params = Object.fromEntries(searchParams); // Convert searchParams to a plain object
 
     // Extract query parameters
