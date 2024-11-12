@@ -58,3 +58,5 @@ package-lock.json
 
 # Yarn
 yarn.lock
+
+public/_next-video/
