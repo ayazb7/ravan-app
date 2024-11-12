@@ -2,10 +2,10 @@ import Project from "@/app/models/Project";
 import { NextResponse } from "next/server";
 
 export async function GET(req) {
+  const url = req.nextUrl;
+  const searchParams = url.searchParams;
   try {
     // Use req.nextUrl instead of req.url
-    const url = req.nextUrl;
-    const searchParams = url.searchParams;
 
     // Extract query parameters
     const {
