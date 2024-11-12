@@ -3,8 +3,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
   try {
-    // Use req.nextUrl instead of req.url
-    const { searchParams } = req.nextUrl; // Directly destructure searchParams
+    // Use the URL constructor to parse search parameters from req.url
+    const url = new URL(req.url);
+    const searchParams = url.searchParams;
     const params = Object.fromEntries(searchParams); // Convert searchParams to a plain object
 
     // Extract query parameters
