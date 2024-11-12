@@ -2,11 +2,12 @@ import Project from "@/app/models/Project";
 import { NextResponse } from "next/server";
 
 export async function GET(req) {
+  const url = new URL(req.url);
+  const searchParams = url.searchParams;
+  const params = Object.fromEntries(searchParams);
   try {
     // Use the URL constructor to parse search parameters from req.url
-    const url = new URL(req.url);
-    const searchParams = url.searchParams;
-    const params = Object.fromEntries(searchParams); // Convert searchParams to a plain object
+    // Convert searchParams to a plain object
 
     // Extract query parameters
     const {
