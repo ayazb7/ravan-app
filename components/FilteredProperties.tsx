@@ -33,7 +33,7 @@ const FilteredProperties: React.FC<FilteredPropertiesProps> = ({
       <h2 className="mb-10 text-center text-white text-5xl font-semibold ">
         Properties
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-14 gap-y-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 xl:grid-cols-3 gap-x-14 gap-y-10">
         {initialProperties.map((project) => (
           <CardProp
             key={project._id}
