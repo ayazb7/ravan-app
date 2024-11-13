@@ -132,27 +132,20 @@ const NavBar: React.FC = () => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
-                  <p className="text-lg font-semibold">Residential</p>
+                  <p className="text-lg font-semibold">Projects</p>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <Link href="/" passHref>
-                    <NavigationMenuLink>To Buy</NavigationMenuLink>
+                  <Link href="/offplan" passHref>
+                    <NavigationMenuLink>Off Plan</NavigationMenuLink>
                   </Link>
-                  <Link href="/" passHref>
-                    <NavigationMenuLink>For Sale</NavigationMenuLink>
-                  </Link>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  <p className="text-lg font-semibold">Commercial</p>
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
                   <Link href="/commercial" passHref>
-                    <NavigationMenuLink>To Buy</NavigationMenuLink>
+                    <NavigationMenuLink>Commercial</NavigationMenuLink>
                   </Link>
-                  <Link href="/" passHref>
-                    <NavigationMenuLink>For Sale</NavigationMenuLink>
+                  <Link href="/residential" passHref>
+                    <NavigationMenuLink>Residential</NavigationMenuLink>
+                  </Link>
+                  <Link href="/partners" passHref>
+                    <NavigationMenuLink>Partners</NavigationMenuLink>
                   </Link>
                 </NavigationMenuContent>
               </NavigationMenuItem>
