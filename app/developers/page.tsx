@@ -35,16 +35,16 @@ const page = () => {
           Get to Know Our Developers
         </h2>
         <div className="w-[75vw] my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 xl:grid-cols-3 gap-x-5 gap-y-10">
-          <Link href="developer/binghatti" passHref>
+          <Link href="developer/Binghatti" passHref>
             <img src={binghatti.src} alt="binghatti" />
           </Link>
-          <Link href="developer/sobha" passHref>
+          <Link href="developer/Sobha" passHref>
             <img src={sobha.src} alt="sobha" />
           </Link>
-          <Link href="developer/damac" passHref>
+          <Link href="developer/DAMAC" passHref>
             <img src={damac.src} alt="damac" />
           </Link>
-          <Link href="developer/danube" passHref>
+          <Link href="developer/Danube" passHref>
             <img src={danbure.src} alt="danube" />
           </Link>
         </div>

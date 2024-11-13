@@ -1,13 +1,25 @@
+// pages/api/properties/[developer].ts
 import Project from "@/app/models/Project";
 import { NextResponse } from "next/server";
-import { parse } from "url";
-export async function GET() {
+import { NextRequest } from "next/server";
+
+export async function GET(req) {
   try {
-    const properties = await Project.find({ developer: "Sobha" });
+    const { searchParams } = new URL(req.url);
+    const developer = searchParams.get("developer");
+
+    if (!developer) {
+      return NextResponse.json(
+        { message: "Developer not specified" },
+        { status: 400 }
+      );
+    }
+
+    const properties = await Project.find({ developer });
 
     return NextResponse.json({ properties }, { status: 200 });
   } catch (err) {
-    console.log(err);
+    console.error("Error fetching properties:", err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
   }
 }
@@ -21,7 +33,7 @@ export async function POST(req) {
 
     return NextResponse.json({ message: "Ticket Created" }, { status: 201 });
   } catch (err) {
-    console.log(err);
+    console.error("Error creating ticket:", err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
   }
 }
