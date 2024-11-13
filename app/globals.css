@@ -348,3 +348,11 @@ body {
   width: 20% !important;
   align-self: flex-end;
 }
+.hover-effect2 {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hover-effect2:hover {
+  transform: scale(1.05); /* Slight scaling effect */
+  color: #b3b3b3; /* Replace with the desired hover color */
+}

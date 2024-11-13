@@ -127,7 +127,7 @@ const NavBar: React.FC = () => {
             <Image src={logo} alt="Highend logo" height={80} width={80} />
           </Link>
         </div>
-        <div className="flex justify-center items-center text-my_blue h-full">
+        <div className="flex justify-center gap-x-12 items-center text-white h-full">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -136,16 +136,24 @@ const NavBar: React.FC = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <Link href="/offplan" passHref>
-                    <NavigationMenuLink>Off Plan</NavigationMenuLink>
+                    <NavigationMenuLink className="hover-effect2">
+                      Off Plan
+                    </NavigationMenuLink>
                   </Link>
                   <Link href="/commercial" passHref>
-                    <NavigationMenuLink>Commercial</NavigationMenuLink>
+                    <NavigationMenuLink className="hover-effect2">
+                      Commercial
+                    </NavigationMenuLink>
                   </Link>
                   <Link href="/residential" passHref>
-                    <NavigationMenuLink>Residential</NavigationMenuLink>
+                    <NavigationMenuLink className="hover-effect2">
+                      Residential
+                    </NavigationMenuLink>
                   </Link>
                   <Link href="/partners" passHref>
-                    <NavigationMenuLink>Partners</NavigationMenuLink>
+                    <NavigationMenuLink className="hover-effect2">
+                      Partners
+                    </NavigationMenuLink>
                   </Link>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -156,9 +164,6 @@ const NavBar: React.FC = () => {
 
           <Link href="/en/about" className={cn(linkHoverEffectStyle())}>
             <p className="text-lg font-semibold">Communities</p>
-          </Link>
-          <Link href="/offplan" className={cn(linkHoverEffectStyle())}>
-            <p className="text-lg font-semibold">Off Plan</p>
           </Link>
           <Link href="/en/about" className={cn(linkHoverEffectStyle())}>
             <p className="text-lg font-semibold">Contact</p>
