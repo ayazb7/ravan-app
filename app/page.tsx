@@ -17,9 +17,9 @@ export default function Home() {
       <Landing />
       <Partners />
       <AboutUs />
-      <Services />
+      {/* <Services /> */}
       {/* <Discover /> */}
-      <ListProperty />
+      {/* <ListProperty /> */}
       <ContactUs />
       <div className="fixed bottom-5 left-5 w-[10vw]">
         <Link
