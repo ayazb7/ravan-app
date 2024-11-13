@@ -67,7 +67,8 @@ const CommercialPropertiesPage = async ({
 
         <div className="relative flex flex-col items-center justify-center h-full text-center space-y-8 px-4">
           <p className="text-lg text-white hover:font-extrabold">
-            <Link href="/">Home</Link> / <Link href="/offplan">Commercial</Link>
+            <Link href="/">Home</Link> /{" "}
+            <Link href="/commercial">Commercial</Link>
           </p>
           <h1 className="text-4xl text-white font-bold">Commercial Projects</h1>
           <p className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw]">
