@@ -150,9 +150,9 @@ const NavBar: React.FC = () => {
                       Residential
                     </NavigationMenuLink>
                   </Link>
-                  <Link href="/partners" passHref>
+                  <Link href="/developers" passHref>
                     <NavigationMenuLink className="hover-effect2">
-                      Partners
+                      Developers
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuContent>
