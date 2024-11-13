@@ -60,8 +60,7 @@ const CardProp: React.FC<CardProps> = ({
 
   return (
     <div
-      className="relative overflow-hidden shadow-lg cursor-pointer  flex flex-col"
-      style={{ width: "350px", height: "400px" }}
+      className="relative overflow-hidden shadow-lg cursor-pointer  flex flex-col w-[27vw]  lg:h-[55vh]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
