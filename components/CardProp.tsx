@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useCurrency } from "@/context/currencyContext";
 import EmblaCarousel from "./EmblaCarousel2";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 interface CardProps {
   status: string;
   bedrooms: string;
@@ -32,6 +32,7 @@ const CardProp: React.FC<CardProps> = ({
   const [currencySymbol, setCurrencySymbol] = useState("AED");
   const [isHovered, setIsHovered] = useState(false);
   const [slides, setSlides] = useState<string[]>([]);
+  const router = useRouter();
 
   // Convert price based on currency and conversion rate
   useEffect(() => {
@@ -40,6 +41,11 @@ const CardProp: React.FC<CardProps> = ({
       setCurrencySymbol(currency);
     }
   }, [currency, price, conversionRates]);
+  const handleExploreClick = () => {
+    router.push(
+      `/projects?project=${project}&developer=${developer}&price=${price}&paymentPlan=${paymentPlan}&handover=${delivery}&photos=${photoUrl}`
+    );
+  };
 
   // Manually create image paths for slides
   useEffect(() => {
@@ -88,14 +94,13 @@ const CardProp: React.FC<CardProps> = ({
           <button className="border border-white text-white bg-transparent py-2 px-4 rounded-full w-1/2 hover:bg-white hover:text-black transition-colors duration-300">
             Contact
           </button>
-          <Link
-            href={`\projects?project=${project}&developer=${developer}&price=${price}&paymentPlan=${paymentPlan}&handover=${delivery}&photos=${photoUrl}`}
-            className="w-[10vw]"
+
+          <button
+            className="bg-[#6EACDA]  text-white py-2 px-4 rounded-full w-1/2 hover:bg-[#5998C7] transition-colors duration-300"
+            onClick={handleExploreClick}
           >
-            <button className="bg-[#6EACDA] text-white py-2 px-4 rounded-full w-full hover:bg-[#5998C7] transition-colors duration-300">
-              Explore
-            </button>
-          </Link>
+            Explore
+          </button>
         </div>
       </div>
     </div>

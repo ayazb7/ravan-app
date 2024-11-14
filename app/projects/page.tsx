@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "@/app/globals.css";
 import { LayoutGridDemo } from "@/components/testing";
+import Link from "next/link";
 
 interface SearchParams {
   project?: string;
@@ -59,9 +60,11 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
             <button className="btn-custom hover:bg-black hover:rounded-lg">
               View Brochure
             </button>
-            <button className="btn-custom hover:bg-black hover:rounded-lg">
-              Register Interest
-            </button>
+            <Link href="/contact">
+              <button className="btn-custom hover:bg-black hover:rounded-lg">
+                Register Interest
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -85,7 +88,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
         <div className="flex flex-col items-center w-[30vw] h-[70%] justify-between">
           <div className="text-center flex flex-col justify-between items-center ">
             <h3 className="text-gray-500 font-semibold mb-5">Starting Price</h3>
-            <p className="text-4xl font-bold text-white">{price} Million</p>
+            <p className="text-4xl font-bold text-white">{price} Million AED</p>
           </div>
 
           <div className="bg-white h-[0.1vh] w-[80%]"></div>

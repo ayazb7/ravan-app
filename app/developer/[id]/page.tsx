@@ -2,7 +2,7 @@
 import { FC } from "react";
 import SearchBg from "@/logos/sobhaphoto.jpg";
 import FilteredProperties from "@/components/FilteredProperties";
-
+import { DEVS_INFO } from "@/data.js";
 interface ProductPageProps {
   params: {
     id: string;
@@ -16,7 +16,7 @@ const ProductPage: FC<ProductPageProps> = async ({ params }) => {
   const fetchProperties = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/devs?developer=${id}`
+        `https://yassin811-app.vercel.app//api/devs?developer=${id}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch properties");
@@ -30,11 +30,12 @@ const ProductPage: FC<ProductPageProps> = async ({ params }) => {
   };
 
   const properties = await fetchProperties();
+  const developerInfo = DEVS_INFO[id as keyof typeof DEVS_INFO];
 
   return (
     <div className="flex flex-col bg-black items-center">
       <div
-        className="relative h-[80vh] w-full bg-fixed bg-center bg-cover "
+        className="relative h-[90vh] w-full bg-fixed bg-center bg-cover "
         style={{ backgroundImage: `url(${SearchBg.src})` }}
       >
         <div className="video-overlay"></div>
@@ -46,12 +47,9 @@ const ProductPage: FC<ProductPageProps> = async ({ params }) => {
             {id} Properties
           </h1>
           <p className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw] brightness-200">
-            Sobha are an international luxury real estate developer committed to
-            redefining the art of living by building sustainable communities.
-            Founded in 1976 by PNC Menon, a legendary innovator in the real
-            estate industry, as an interior design business in Oman, we have
-            established our presence all over the world with developments and
-            investments in UAE, Oman, Bahrain, Brunei and India.
+            {developerInfo
+              ? developerInfo
+              : "Developer information not available."}
           </p>
         </div>
       </div>
