@@ -23,7 +23,7 @@ const Landing = () => {
       </div>
       <div className="absolute flex flex-col items-center justify-center w-[80]">
         <h1 className="text-white font-black md:text-4xl text-base w-[65vw]   text-center mb-8">
-          Turning Property Dreams into Reality
+          Turning Property Dreams into Reality.
         </h1>
       </div>
     </div>
