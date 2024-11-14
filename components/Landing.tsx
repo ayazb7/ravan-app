@@ -25,21 +25,6 @@ const Landing = () => {
         <h1 className="text-white font-black md:text-4xl text-base w-[65vw]   text-center mb-8">
           Turning Property Dreams into Reality
         </h1>
-        <div className="flex flex-wrap justify-center space-x-4 space-y-4 md:space-x-4 md:space-y-0 md:flex-nowrap">
-          <Link href="/commercial">
-            <button className="btn-custom hover:bg-black hover:rounded-lg">
-              Commercial
-            </button>
-          </Link>
-          <button className="btn-custom hover:bg-black hover:rounded-lg">
-            Residential
-          </button>
-          <Link href="/offplan">
-            <button className="btn-custom hover:bg-black hover:rounded-lg">
-              Off Plan
-            </button>
-          </Link>
-        </div>
       </div>
     </div>
   );

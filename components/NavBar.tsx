@@ -128,6 +128,9 @@ const NavBar: React.FC = () => {
           </Link>
         </div>
         <div className="flex justify-center gap-x-12 items-center text-white h-full">
+          <Link href="/" className={cn(linkHoverEffectStyle())}>
+            <p className="text-lg font-semibold">Home</p>
+          </Link>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -161,12 +164,8 @@ const NavBar: React.FC = () => {
             <NavigationMenuViewport />
             <NavigationMenuIndicator />
           </NavigationMenu>
-
-          <Link href="/en/about" className={cn(linkHoverEffectStyle())}>
-            <p className="text-lg font-semibold">Communities</p>
-          </Link>
-          <Link href="/en/about" className={cn(linkHoverEffectStyle())}>
-            <p className="text-lg font-semibold">Contact</p>
+          <Link href="/contact" className={cn(linkHoverEffectStyle())}>
+            <p className="text-lg font-semibold">Contact Us</p>
           </Link>
         </div>
         <div className="flex items-center">
