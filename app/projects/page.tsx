@@ -57,9 +57,13 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
 
           {/* Bottom Buttons */}
           <div style={{ display: "flex", gap: "1rem" }}>
-            <button className="btn-custom hover:bg-black hover:rounded-lg">
+            <a
+              href={`/${photos}/broucher.pdf`}
+              className="btn-custom hover:bg-black hover:rounded-lg text-center justify-center pt-4"
+              download="broucher"
+            >
               View Brochure
-            </button>
+            </a>
             <Link href="/contact">
               <button className="btn-custom hover:bg-black hover:rounded-lg">
                 Register Interest
@@ -104,7 +108,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
         </div>
       </div>
       <div className="bg-black">
-        <LayoutGridDemo />
+        <LayoutGridDemo photos={photos} />
       </div>
     </div>
   );

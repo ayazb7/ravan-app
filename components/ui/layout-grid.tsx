@@ -82,7 +82,7 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
           opacity: 0,
         }}
         animate={{
-          opacity: 0.6,
+          opacity: 0,
         }}
         className="absolute inset-0 h-full w-full bg-black opacity-60 z-10"
       />
