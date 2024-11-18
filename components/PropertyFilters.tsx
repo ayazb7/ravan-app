@@ -26,15 +26,8 @@ const PropertyFilters = () => {
   const handleDeveloperSelect = (key: string) => setDeveloper(key);
 
   useEffect(() => {
-    const buildBedroomsQuery = () => {
-      if (bedrooms === "4+") {
-        return "bedrooms=4,5,6,7,8,9"; // Assuming you want to check for 4 or more bedrooms
-      }
-      return `bedrooms=${bedrooms}`;
-    };
-
     const query = [
-      bedrooms !== "Bedrooms" && buildBedroomsQuery(),
+      bedrooms !== "Bedrooms" && `bedrooms=${bedrooms}`,
       priceRange !== "Price Range" && `priceRange=${priceRange}`,
       propertyType !== "Property Type" && `propertyType=${propertyType}`,
       paymentPlan !== "Payment Plan" && `paymentPlan=${paymentPlan}`,
@@ -59,33 +52,6 @@ const PropertyFilters = () => {
     <div className="flex space-x-2 border-2 bg-black text-white p-2 rounded-md">
       <Dropdown>
         <DropdownTrigger>
-          <Button variant="bordered">{bedrooms}</Button>
-        </DropdownTrigger>
-        <DropdownMenu
-          aria-label="Bedrooms"
-          style={{
-            backgroundColor: "#2e2e2e",
-            width: "150px",
-            color: "#ffffff",
-          }}
-        >
-          <DropdownItem key="1" onClick={() => handleBedroomsSelect("1")}>
-            1
-          </DropdownItem>
-          <DropdownItem key="2" onClick={() => handleBedroomsSelect("2")}>
-            2
-          </DropdownItem>
-          <DropdownItem key="3" onClick={() => handleBedroomsSelect("3")}>
-            3
-          </DropdownItem>
-          <DropdownItem key="4+" onClick={() => handleBedroomsSelect("4")}>
-            4+
-          </DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-
-      <Dropdown>
-        <DropdownTrigger>
           <Button variant="bordered">{priceRange}</Button>
         </DropdownTrigger>
         <DropdownMenu
@@ -96,6 +62,12 @@ const PropertyFilters = () => {
             color: "#ffffff",
           }}
         >
+          <DropdownItem
+            key="Pice Range"
+            onClick={() => handlePriceRangeSelect("Price Range")}
+          >
+            All
+          </DropdownItem>
           <DropdownItem
             key="$0 - $1,000"
             onClick={() => handlePriceRangeSelect("1")}
@@ -120,12 +92,6 @@ const PropertyFilters = () => {
           >
             Less than 10 M
           </DropdownItem>
-          <DropdownItem
-            key="$2,000 - $3,000"
-            onClick={() => handlePriceRangeSelect("100")}
-          >
-            More than 10 M
-          </DropdownItem>
         </DropdownMenu>
       </Dropdown>
 
@@ -143,19 +109,25 @@ const PropertyFilters = () => {
         >
           <DropdownItem
             key="Apartment"
-            onClick={() => handlePropertyTypeSelect("Apartment")}
+            onClick={() => handlePropertyTypeSelect("Property Type")}
+          >
+            All
+          </DropdownItem>
+          <DropdownItem
+            key="Apartment"
+            onClick={() => handlePropertyTypeSelect("apartments")}
           >
             Apartment
           </DropdownItem>
           <DropdownItem
             key="villa"
-            onClick={() => handlePropertyTypeSelect("villa")}
+            onClick={() => handlePropertyTypeSelect("villas")}
           >
             Villa
           </DropdownItem>
           <DropdownItem
             key="studio"
-            onClick={() => handlePropertyTypeSelect("studio")}
+            onClick={() => handlePropertyTypeSelect("Studio")}
           >
             Studio
           </DropdownItem>
@@ -166,10 +138,16 @@ const PropertyFilters = () => {
             Penthouse
           </DropdownItem>
           <DropdownItem
-            key="lagoon"
-            onClick={() => handlePropertyTypeSelect("lagoon")}
+            key="bhk"
+            onClick={() => handlePropertyTypeSelect("bhk")}
           >
-            Lagoon
+            BHK
+          </DropdownItem>
+          <DropdownItem
+            key="TownHouse"
+            onClick={() => handlePropertyTypeSelect("townhouses")}
+          >
+            TownHouse
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
@@ -186,6 +164,12 @@ const PropertyFilters = () => {
             color: "#ffffff",
           }}
         >
+          <DropdownItem
+            key="all"
+            onClick={() => handlePaymentPlanSelect("Payment Plan")}
+          >
+            All
+          </DropdownItem>
           <DropdownItem
             key="Monthly"
             onClick={() => handlePaymentPlanSelect("60/40")}
@@ -220,17 +204,12 @@ const PropertyFilters = () => {
           }}
         >
           <DropdownItem
-            key="2023"
-            onClick={() => handleProjectDeliverySelect("2023")}
+            key="Project Delivery"
+            onClick={() => handleProjectDeliverySelect("Project Delivery")}
           >
-            2023
+            All
           </DropdownItem>
-          <DropdownItem
-            key="2024"
-            onClick={() => handleProjectDeliverySelect("2024")}
-          >
-            2024
-          </DropdownItem>
+
           <DropdownItem
             key="2025"
             onClick={() => handleProjectDeliverySelect("2025")}
@@ -271,6 +250,12 @@ const PropertyFilters = () => {
           }}
         >
           <DropdownItem
+            key="Developer"
+            onClick={() => handleDeveloperSelect("Developer")}
+          >
+            Developer
+          </DropdownItem>
+          <DropdownItem
             key="Developer A"
             onClick={() => handleDeveloperSelect("Sobha")}
           >
@@ -289,7 +274,7 @@ const PropertyFilters = () => {
             Binghatti
           </DropdownItem>
           <DropdownItem
-            key="Developer C"
+            key="Developer D"
             onClick={() => handleDeveloperSelect("Damac")}
           >
             Damac
