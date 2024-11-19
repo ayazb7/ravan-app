@@ -61,10 +61,26 @@ import { useRouter } from "@/node_modules/next/navigation";
 const Partners: React.FC = () => {
   const router = useRouter();
   const SLIDES = [
-    <img src={binghatti.src} alt="emaar" />,
-    <img src={sobha.src} alt="sobha" onClick={() => router.push("/sobha")} />,
-    <img src={damac.src} alt="damac" />,
-    <img src={danbure.src} alt="danbure" />,
+    <img
+      src={binghatti.src}
+      alt="binghatti"
+      onClick={() => router.push("/developer/Binghatti")}
+    />,
+    <img
+      src={sobha.src}
+      alt="sobha"
+      onClick={() => router.push("/developer/Sobha")}
+    />,
+    <img
+      src={damac.src}
+      alt="damac"
+      onClick={() => router.push("/developer/DAMAC")}
+    />,
+    <img
+      src={danbure.src}
+      alt="danbure"
+      onClick={() => router.push("/developer/Danube")}
+    />,
   ];
 
   return (
