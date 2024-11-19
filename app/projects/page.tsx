@@ -42,6 +42,19 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
       >
         <div
           style={{
+            content: '""',
+            position: "absolute",
+            bottom: 0, // Shadow starts at the bottom
+            left: 0,
+            width: "100%",
+            height: "40%", // Limits shadow to a smaller vertical area
+            background:
+              "linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 255, 0))", // Black fading to transparent blue
+            zIndex: 1,
+          }}
+        ></div>
+        <div
+          style={{
             position: "absolute",
             bottom: "2rem",
             left: "2rem",
@@ -50,6 +63,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
             alignItems: "flex-start",
             gap: "1rem",
             color: "#fff",
+            zIndex: 10,
           }}
         >
           <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>{project}</h1>
