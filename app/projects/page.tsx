@@ -81,7 +81,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
             </a>
             <Link href="/contact">
               <button className="btn-custom hover:bg-black hover:rounded-lg">
-                Register Interest
+                Register Interest.
               </button>
             </Link>
           </div>
