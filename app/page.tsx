@@ -5,7 +5,7 @@ import AboutUs from "@/components/AboutUs";
 import Landing from "@/components/Landing";
 import Partners from "@/components/Partners";
 import Services from "@/components/Services";
-import Discover from "@/components/Discover";
+
 import ContactUs from "@/components/ContactUs";
 import ListProperty from "@/components/ListProperty";
 
