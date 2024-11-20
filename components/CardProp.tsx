@@ -13,7 +13,8 @@ interface CardProps {
   paymentPlan: string;
   propertyType: string;
   project: string;
-  photoUrl: string; // This should be the folder name
+  photoUrl: string;
+  description: string; // This should be the folder name
 }
 
 const CardProp: React.FC<CardProps> = ({
@@ -26,6 +27,7 @@ const CardProp: React.FC<CardProps> = ({
   project,
   propertyType,
   photoUrl,
+  description,
 }) => {
   const { currency, conversionRates } = useCurrency();
   const [convertedPrice, setConvertedPrice] = useState(price * 1000000);
@@ -43,7 +45,7 @@ const CardProp: React.FC<CardProps> = ({
   }, [currency, price, conversionRates]);
   const handleExploreClick = () => {
     router.push(
-      `/projects?project=${project}&developer=${developer}&price=${price}&paymentPlan=${paymentPlan}&handover=${delivery}&photos=${photoUrl}`
+      `/projects?project=${project}&developer=${developer}&price=${price}&paymentPlan=${paymentPlan}&handover=${delivery}&photos=${photoUrl}&details=${description}`
     );
   };
 

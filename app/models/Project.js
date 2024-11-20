@@ -18,6 +18,7 @@ const projectSchema = new Schema({
   projectProperties: { type: String },
   startingPrice: { type: Number },
   photosUrl: { type: String },
+  description: { type: String },
 });
 
 // Export the model, ensuring it is not recompiled on server reloads.

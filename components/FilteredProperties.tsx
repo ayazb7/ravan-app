@@ -13,6 +13,7 @@ interface Project {
   projectProperties: string;
   project: string;
   photosUrl: string;
+  description: string;
   // Add other fields as needed
 }
 
@@ -46,6 +47,7 @@ const FilteredProperties: React.FC<FilteredPropertiesProps> = ({
             propertyType={project.projectProperties}
             project={project.project}
             photoUrl={project.photosUrl}
+            description={project.description}
           />
         ))}
       </div>

@@ -10,12 +10,13 @@ interface SearchParams {
   price?: string;
   paymentPlan?: string;
   handover?: string;
-  photos?: string; // This should be the folder name
+  photos?: string;
+  details: string; // This should be the folder name
 }
 
 export default function Page({ searchParams }: { searchParams: SearchParams }) {
   const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
-  const { project, developer, price, paymentPlan, handover, photos } =
+  const { project, developer, price, paymentPlan, handover, photos, details } =
     searchParams;
 
   useEffect(() => {
@@ -92,15 +93,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
           <h2 className="text-gray-500 font-semibold mb-10">
             About the project
           </h2>
-          <p className="text-white">
-            Monaco Mansions at Dubai South by Azizi Developments offers a
-            stunning blend of water-inspired luxury in expansive 6 to 8-bedroom
-            homes. These mansions redefine elegance, merging classic royal
-            architecture with contemporary, high-quality infrastructure. Nestled
-            within lush greenery and peaceful lagoons, Monaco Mansions by Azizi
-            invites you to experience a lifestyle of refined luxury and
-            tranquility.
-          </p>
+          <p className="text-white">{details}</p>
         </div>
         <div className="bg-white h-[40vh] w-[0.1vw]"></div>
         <div className="flex flex-col items-center w-[30vw] h-[70%] justify-between">
