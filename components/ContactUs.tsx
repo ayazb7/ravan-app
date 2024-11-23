@@ -58,7 +58,7 @@ const ContactUs = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center mt-24  bg-black">
+    <div className="flex flex-col items-center  justify-center mt-24  bg-black">
       <h2 className=" text-white text-start font-semibold text-4xl ">
         Contact Us
       </h2>
@@ -90,7 +90,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center w-[60vw] h-full">
+      <div className="flex flex-col items-center w-[80vw] md:w-[60vw] h-full">
         <div className="flex flex-col space-y-6 w-full flex-grow">
           <div className="flex space-x-6">
             <input
@@ -140,7 +140,7 @@ const ContactUs = () => {
       <button
         onClick={handleSubmit}
         disabled={!firsval || !lastval || !Phoneval || !emailval || !messageval}
-        className={`w-[15vw] h-[9vh] rounded-[28px] mb-10 mt-10 transition-all duration-300 ease-in-out
+        className={`md:w-[15vw] w-[30vw] h-[7vh] rounded-[28px] mb-10 mt-10 transition-all duration-300 ease-in-out
     ${
       firsval && lastval && Phoneval && emailval && messageval
         ? "bg-[#6EACDA] text-white hover:bg-[#5a9bca] focus:bg-[#4e8dbb] active:bg-[#4a85b2] cursor-pointer text-shadow-lg"

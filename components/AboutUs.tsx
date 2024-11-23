@@ -1,5 +1,6 @@
 import React from "react";
 import bgImage from "@/logos/about-bg.jpg"; // Import the image
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
@@ -23,12 +24,13 @@ const AboutUs = () => {
           fit in Dubai's real estate landscape.
         </p>
         {/* Contact Button */}
-        <button
+        <Link
           className="text-black bg-white px-8 py-3 rounded-md font-semibold"
           style={{ marginTop: "5rem" }}
+          href="/contact"
         >
           Contact Us
-        </button>
+        </Link>
       </div>
     </div>
   );
