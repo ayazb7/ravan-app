@@ -115,7 +115,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
         </div>
       </div>
       <div className="bg-black">
-        <LayoutGridDemo photos={photos} />
+        <LayoutGridDemo photosDir={photos} />
       </div>
     </div>
   );
