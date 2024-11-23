@@ -1,37 +1,39 @@
-"use client";
-import { useEffect, useState } from "react";
 import "@/app/globals.css";
 import { LayoutGridDemo } from "@/components/testing";
 import Link from "next/link";
-
+import fs from "fs";
+import path from "path";
 interface SearchParams {
   project?: string;
   developer?: string;
   price?: string;
   paymentPlan?: string;
   handover?: string;
-  photos?: string;
+  photos: string;
   details: string; // This should be the folder name
 }
 
 export default function Page({ searchParams }: { searchParams: SearchParams }) {
-  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
   const { project, developer, price, paymentPlan, handover, photos, details } =
     searchParams;
 
-  useEffect(() => {
-    // Set the background image directly using the first image path
-    if (photos) {
-      setBackgroundImage(`/${photos}/1.jpg`); // Assuming the image is named "1.jpg"
-    }
-  }, [photos]);
+  const photosDir = path.resolve("./public", photos || "");
+  const filenames = fs.readdirSync(photosDir);
+
+  const images = filenames
+    .filter(
+      (name) =>
+        name.toLowerCase().endsWith(".jpg") ||
+        name.toLowerCase().endsWith(".jpeg")
+    )
+    .map((name) => path.join(photos, name));
 
   return (
     <div>
       {/* Background Image Section */}
       <div
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(/${photos}/1.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "100vh",
@@ -115,7 +117,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
         </div>
       </div>
       <div className="bg-black">
-        <LayoutGridDemo photosDir={photos} />
+        <LayoutGridDemo photosDir={images} />
       </div>
     </div>
   );
