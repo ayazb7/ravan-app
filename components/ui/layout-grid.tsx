@@ -8,7 +8,7 @@ type Card = {
   content: JSX.Element | React.ReactNode | string;
   className: string;
   thumbnail: string;
-  fullImage: string; // Add full-size image URL
+  // Add full-size image URL
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
