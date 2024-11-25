@@ -211,7 +211,7 @@ const NavBar: React.FC = () => {
           }}
         >
           <Image
-            src={isClicked ? MyCloseSVG : MySVG}
+            src={MySVG}
             alt="Menu Icon"
             className={`menu-mobile-only ${
               isClicked ? "clicked" : ""
@@ -243,42 +243,26 @@ const NavBar: React.FC = () => {
                 />
               </div>
               <Link
-                href="/en/markets"
-                className="text-my_blue font-semibold"
+                href="/"
+                className="text-white font-semibold"
                 onClick={handleMenuToggle}
               >
-                Markets
+                Home
               </Link>
               <Link
-                href="/en/#services"
-                className="text-my_blue font-semibold"
+                href="/offplan"
+                className="text-white font-semibold"
                 onClick={handleMenuToggle}
               >
-                Services
+                Off Plan
               </Link>
               <Link
-                href="/en/about"
-                className="text-my_blue font-semibold"
+                href="/developers"
+                className="text-white font-semibold"
                 onClick={handleMenuToggle}
               >
-                About
+                Developers
               </Link>
-              <button
-                className={`button-18 ${
-                  selectedLang === "EN" ? "selected" : ""
-                } button-mobile`}
-                onClick={() => handleLanguageChange("EN")}
-              >
-                EN
-              </button>
-              <button
-                className={`button-18 button-switch ${
-                  selectedLang === "AR" ? "selected" : ""
-                } button-mobile`}
-                onClick={() => handleLanguageChange("AR")}
-              >
-                AR
-              </button>
             </motion.div>
           )}
         </AnimatePresence>
