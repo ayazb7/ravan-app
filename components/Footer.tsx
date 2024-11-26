@@ -20,9 +20,9 @@ const Footer = () => {
           <Link href="/" className="text-white text-base font-medium">
             Home
           </Link>
-          <Link href="/en/about" className="text-white text-base font-medium">
+          {/* <Link href="/eabout" className="text-white text-base font-medium">
             About
-          </Link>
+          </Link> */}
           <Link href="/contact" className="text-white text-base font-medium">
             Contact
           </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
           >
             Residential
           </Link>
-          <Link href="/off Plan" className="text-white text-base font-medium">
+          <Link href="/offPlan" className="text-white text-base font-medium">
             Off Plan
           </Link>
         </div>
@@ -80,7 +80,7 @@ const Footer = () => {
           <Link href="/" className="text-white text-base font-medium">
             About
           </Link>
-          <Link href="/" className="text-white text-base font-medium">
+          <Link href="/contact" className="text-white text-base font-medium">
             Contact
           </Link>
         </div>
@@ -95,7 +95,7 @@ const Footer = () => {
           >
             Residential
           </Link>
-          <Link href="/off Plan" className="text-white text-base font-medium">
+          <Link href="/offPlan" className="text-white text-base font-medium">
             Off Plan
           </Link>
         </div>

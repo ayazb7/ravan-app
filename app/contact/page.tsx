@@ -19,7 +19,7 @@ const page = () => {
           <h1 className="text-4xl text-white font-bold">Contact Us</h1>
         </div>
       </div>
-      <p className="text-white mt-20 text-2xl font-semibold">
+      <p className="text-white mt-20 md:text-xl text-lg text-center font-semibold">
         Fill the contact us from below to get in contact with us
       </p>
       <ContactUs />
