@@ -40,13 +40,13 @@ const ProductPage: FC<ProductPageProps> = async ({ params }) => {
       >
         <div className="video-overlay"></div>
         <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4 ">
-          <p className="text-lg text-white hover:font-extrabold brightness-200">
+          <p className="md:text-lg text-base text-white hover:font-extrabold brightness-200">
             About {id}
           </p>
-          <h1 className="text-6xl text-white font-bold brightness-200">
+          <h1 className="md:text-4xl text-3xl  text-white font-bold brightness-200">
             {id} Properties
           </h1>
-          <p className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw] brightness-200">
+          <p className="md:text-xl text-sm text-white max-w-4xl leading-5 md:leading-8 mt-4 w-[70vw] brightness-200">
             {developerInfo
               ? developerInfo
               : "Developer information not available."}

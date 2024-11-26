@@ -94,9 +94,12 @@ const CardProp: React.FC<CardProps> = ({
         </div>
 
         <div className="flex space-x-4 mt-4">
-          <button className="border border-white text-white bg-transparent py-2 px-4 rounded-full w-1/2 hover:bg-white hover:text-black transition-colors duration-300">
+          <Link
+            href="/contact"
+            className="border border-white text-center items-center justify-center text-white bg-transparent py-2 px-4 rounded-full w-1/2 hover:bg-white hover:text-black transition-colors duration-300"
+          >
             Contact
-          </button>
+          </Link>
 
           <button
             className="bg-[#6EACDA]  text-white py-2 px-4 rounded-full w-1/2 hover:bg-[#5998C7] transition-colors duration-300"
