@@ -52,7 +52,7 @@ const PropertyFilters = () => {
     <div className="md:flex md:flex-row grid-cols-2 space-x-2 border-2 bg-black text-white p-2 rounded-md">
       <Dropdown>
         <DropdownTrigger>
-          <Button variant="bordered ">{priceRange}</Button>
+          <Button variant="bordered">{priceRange}</Button>
         </DropdownTrigger>
         <DropdownMenu
           aria-label="Price Range"
