@@ -3,22 +3,22 @@ import React from "react";
 import bg from "@/logos/homephoto.png";
 import Video from "next-video";
 import "@/app/globals.css";
-import videoLoop from "@/videos/bg6.mp4";
+
 import Link from "next/link";
 
 const Landing = () => {
   return (
     <div className="relative flex items-center justify-center">
       <div className="video-wrapper ">
-        <Video
-          src={videoLoop}
+        <video
           autoPlay
-          muted
           loop
+          muted
           playsInline
-          controls={false}
-          className="video"
-        ></Video>
+          className="object-cover w-full h-full"
+        >
+          <source src="/bg6.mp4" type="video/mp4" />
+        </video>
         <div className="video-overlay"></div>
       </div>
       <div className="absolute flex flex-col items-center justify-center w-[80]">

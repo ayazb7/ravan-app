@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import videoLoop from "@/videos/bg6.mp4";
+
 import Video from "next-video";
 import Link from "next/link";
 import binghatti from "@/logos/binghatti5.png";
@@ -38,15 +38,15 @@ const page = () => {
   return (
     <div className="h-full bg-black">
       <div className="video-wrapper2">
-        <Video
-          src={videoLoop}
+        <video
           autoPlay
-          muted
           loop
+          muted
           playsInline
-          controls={false}
-          className="video2"
-        />
+          className="object-cover w-full h-full"
+        >
+          <source src="/bg6.mp4" type="video/mp4" />
+        </video>
         <div className="video-overlay"></div>
       </div>
       <div className="absolute left-10 top-[40%] flex gap-x-5 ">
