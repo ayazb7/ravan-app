@@ -1,12 +1,12 @@
 import React from "react";
-import bgImage from "@/logos/about-bg.jpg"; // Import the image
+
 import Link from "next/link";
 
 const AboutUs = () => {
   return (
     <div
       className="relative md:h-[85vh] h-[60vh] w-full bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: `url(${bgImage.src})` }} // Use the imported image
+      style={{ backgroundImage: "url(/about-bg.jpg)" }} // Use the imported image
     >
       {/* Text Container */}
       <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4">
