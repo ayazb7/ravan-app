@@ -59,7 +59,7 @@ const CommercialPropertiesPage = async ({
   return (
     <div className="flex flex-col bg-black items-center">
       <div
-        className="relative h-[80vh] w-full bg-fixed bg-center bg-cover"
+        className="relative h-[80vh] w-full md:bg-fixed bg-scroll bg-center bg-cover"
         style={{ backgroundImage: `url(${SearchBg.src})` }}
       >
         {/* Dark overlay */}

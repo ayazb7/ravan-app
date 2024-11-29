@@ -57,7 +57,7 @@ const OffplanProjectsPage = async ({
   return (
     <div className="flex flex-col bg-black items-center">
       <div
-        className="relative h-[80vh] w-full bg-fixed bg-center bg-cover"
+        className="relative h-[80vh] w-full md:bg-fixed bg-scroll bg-center bg-cover"
         style={{ backgroundImage: `url(${SearchBg.src})` }}
       >
         <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4">

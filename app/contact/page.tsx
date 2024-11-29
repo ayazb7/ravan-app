@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="bg-black items-center flex flex-col">
       <div
-        className="relative h-[50vh] w-full bg-fixed bg-center bg-cover"
+        className="relative h-[50vh] w-full md:bg-fixed bg-scroll bg-center bg-cover"
         style={{ backgroundImage: `url(${bg.src})` }}
       >
         {/* Dark overlay */}
