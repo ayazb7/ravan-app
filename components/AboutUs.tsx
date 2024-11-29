@@ -5,7 +5,7 @@ import Link from "next/link";
 const AboutUs = () => {
   return (
     <div
-      className="relative md:h-[85vh] h-[60vh] w-full bg-fixed bg-center bg-cover"
+      className="relative md:h-[85vh] h-[60vh] w-full md:bg-fixed bg-scroll bg-center bg-cover"
       style={{ backgroundImage: "url(/about-bg.jpg)" }} // Use the imported image
     >
       {/* Text Container */}
