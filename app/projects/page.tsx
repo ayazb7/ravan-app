@@ -46,7 +46,7 @@ export default function Page({ searchParams }: { searchParams: SearchParams }) {
           {/* Bottom Buttons */}
           <div className="flex flex-wrap gap-4">
             <a
-              href={`/api/get-pdf?photo=${photos}&file=broucher`}
+              href={`/${photos}/broucher.pdf`}
               download="broucher"
               className="bg-white text-black py-2 px-4 rounded hover:bg-black hover:text-white transition"
             >
