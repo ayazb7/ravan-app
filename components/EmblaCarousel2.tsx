@@ -31,7 +31,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
     <section className="emblas">
       {slides.length > 0 && (
         <div
-          className="embla__viewport md:w-[30vw] w-full h-[33vh]"
+          className="embla__viewport md:w-[30vw] w-full h-[400px] md:h-[33vh]"
           ref={emblaRef}
         >
           <div className="embla__container">

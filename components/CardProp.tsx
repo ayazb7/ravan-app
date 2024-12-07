@@ -78,7 +78,7 @@ const CardProp: React.FC<CardProps> = ({
       </div>
 
       {/* Content Section */}
-      <div className="bg-[#2A2A2A] text-white p-4 flex flex-col justify-between h-1/2">
+      <div className="bg-[#2A2A2A] text-white p-4 flex flex-col justify-between h-[350px] md:h-1/2">
         <div className="text-start">
           <p className="text-2xl font-bold">{project}</p>
           <p className="text-sm font-medium">by: {developer}</p>
