@@ -35,18 +35,18 @@ const ProductPage: FC<ProductPageProps> = async ({ params }) => {
   return (
     <div className="flex flex-col bg-black items-center">
       <div
-        className="relative h-[90vh] w-full md:bg-fixed bg-scroll bg-center bg-cover "
+        className="relative md:h-[90vh] h-auto w-full md:bg-fixed bg-scroll bg-center bg-cover "
         style={{ backgroundImage: `url(${SearchBg.src})` }}
       >
         <div className="video-overlay"></div>
-        <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-4 ">
-          <p className="md:text-lg text-base text-white hover:font-extrabold brightness-200">
+        <div className="flex flex-col items-center justify-center h-[700px] text-center  px-4 ">
+          <p className="md:text-lg text-sm text-white hover:font-extrabold brightness-200">
             About {id}
           </p>
-          <h1 className="md:text-4xl text-3xl  text-white font-bold brightness-200">
+          <h1 className="md:text-4xl text-xl  text-white font-bold brightness-200">
             {id} Properties
           </h1>
-          <p className="md:text-xl text-sm text-white max-w-4xl leading-5 md:leading-8 mt-4 w-[70vw] brightness-200">
+          <p className="md:text-xl text-xs text-white max-w-4xl leading-5 md:leading-8 mt-4 w-[70vw] brightness-200">
             {developerInfo
               ? developerInfo
               : "Developer information not available."}
