@@ -65,9 +65,11 @@ const OffplanProjectsPage = async ({
             <Link href="/">Home</Link> / <Link href="/offplan">Offplan</Link>
           </p>
           <h1 className="text-4xl text-white font-bold">Off Plan Projects</h1>
-          <p className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw]">
-            Something about commercial properties and Page
-          </p>
+          <h2 className="text-xl text-white max-w-4xl leading-8 mt-4 w-[70vw]">
+            Off-plan projects let you secure modern homes at pre-construction
+            prices with flexible payment plans, offering great investment
+            potential.
+          </h2>
           <PropertyFilters />
         </div>
       </div>
