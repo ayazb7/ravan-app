@@ -68,17 +68,17 @@ const CardProp: React.FC<CardProps> = ({
 
   return (
     <div
-      className="relative overflow-hidden shadow-lg cursor-pointer  flex flex-col w-[86vw] md:w-[27vw] h-[500px] md:h-[61vh]"
+      className="relative overflow-hidden shadow-lg cursor-pointer  flex flex-col w-[86vw] md:w-[27vw] h-[550px] md:h-[61vh]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Section */}
-      <div className="relative w-full h-1/2">
+      <div className="relative w-full h-[280px] md:h-1/2">
         <EmblaCarousel slides={slides} options={{}} />
       </div>
 
       {/* Content Section */}
-      <div className="bg-[#2A2A2A] text-white p-4 flex flex-col justify-between h-[350px] md:h-1/2">
+      <div className="bg-[#2A2A2A] text-white p-4 flex flex-col justify-between h-[400px] md:h-1/2">
         <div className="text-start">
           <p className="text-2xl font-bold">{project}</p>
           <p className="text-sm font-medium">by: {developer}</p>
@@ -93,7 +93,7 @@ const CardProp: React.FC<CardProps> = ({
           <p className="text-base font-medium">{propertyType}</p>
         </div>
 
-        <div className="flex space-x-4 mt-4">
+        <div className="flex space-x-4 md:mt-4">
           <Link
             href="/contact"
             className="border border-white text-center items-center justify-center text-white bg-transparent py-2 px-4 rounded-full w-1/2 hover:bg-white hover:text-black transition-colors duration-300"
