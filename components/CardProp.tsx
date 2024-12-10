@@ -93,10 +93,15 @@ const CardProp: React.FC<CardProps> = ({
           <p className="text-base font-medium">{propertyType}</p>
         </div>
 
-        <div className="flex space-x-4 md:mt-4">
+        <div className="flex space-x-4 z-30 md:mt-4">
           <Link
             href="/contact"
             className="border border-white text-center items-center justify-center text-white bg-transparent py-2 px-4 rounded-full w-1/2 hover:bg-white hover:text-black transition-colors duration-300"
+            style={{
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              appearance: "none",
+            }}
           >
             Contact
           </Link>
