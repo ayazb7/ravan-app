@@ -93,10 +93,10 @@ const CardProp: React.FC<CardProps> = ({
           <p className="text-base font-medium">{propertyType}</p>
         </div>
 
-        <div className="flex space-x-4 z-30 mt-0 md:mt-4">
+        <div className="flex space-x-4 mt-0 md:mt-4">
           <Link
             href="/contact"
-            className=""
+            className="absolute bottom-0 w-[100px] h-[300px] mr-10 z-20 bg-transparent border-white border"
             style={{
               WebkitAppearance: "none",
               MozAppearance: "none",
@@ -106,7 +106,10 @@ const CardProp: React.FC<CardProps> = ({
             Contact
           </Link>
 
-          <button className="" onClick={handleExploreClick}>
+          <button
+            className="absolute bottom-0 w-[100px] h-[100px] bg-transparent border-white leading border"
+            onClick={handleExploreClick}
+          >
             Explore
           </button>
         </div>
