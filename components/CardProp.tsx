@@ -96,6 +96,29 @@ const CardProp: React.FC<CardProps> = ({
         <div className="flex space-x-4 z-30 mt-0 md:mt-4">
           <Link
             href="/contact"
+            className=""
+            style={{
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              appearance: "none",
+            }}
+          >
+            Contact
+          </Link>
+
+          <button className="" onClick={handleExploreClick}>
+            Explore
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CardProp;
+{
+  /* <Link
+            href="/contact"
             className="border border-white text-center items-center justify-center text-white bg-transparent py-2 px-4 rounded-full w-[200px] md:w-1/2 hover:bg-white hover:text-black transition-colors duration-300"
             style={{
               WebkitAppearance: "none",
@@ -111,11 +134,5 @@ const CardProp: React.FC<CardProps> = ({
             onClick={handleExploreClick}
           >
             Explore
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default CardProp;
+          </button> */
+}
