@@ -96,7 +96,7 @@ const CardProp: React.FC<CardProps> = ({
         <div className="flex space-x-4 mt-0 md:mt-4">
           <Link
             href="/contact"
-            className="absolute bottom-3 left-5 md:bottom-0 md:left-0 md:relative border border-white text-center items-center justify-center text-white bg-transparent py-2 px-4 rounded-full w-1/2 hover:bg-white hover:text-black transition-colors duration-300"
+            className="absolute bottom-3 left-2  md:bottom-0 md:left-0 md:relative border border-white text-center items-center justify-center text-white bg-transparent py-2 px-4 rounded-full w-44 md:w-1/2 hover:bg-white hover:text-black transition-colors duration-300"
             style={{
               WebkitAppearance: "none",
               MozAppearance: "none",
@@ -107,7 +107,7 @@ const CardProp: React.FC<CardProps> = ({
           </Link>
 
           <button
-            className="absolute bottom-3 right-5 md:bottom-0 md:right-0 md:relative bg-[#6EACDA] text-white py-2 px-4 rounded-full w-1/2 hover:bg-[#5998C7] transition-colors duration-300"
+            className="absolute bottom-3 right-2 md:bottom-0 md:right-0 md:relative bg-[#6EACDA] text-white py-2 px-4 rounded-full w-44 md:w-1/2 hover:bg-[#5998C7] transition-colors duration-300"
             onClick={handleExploreClick}
           >
             Explore
