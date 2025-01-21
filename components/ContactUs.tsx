@@ -192,7 +192,7 @@ const ContactUs = () => {
         </div>
         <div className="flex items-center justify-center flex-col w-full max-w-xl space-y-6">
           <div className="flex flex-col">
-            <label className="text-white font-medium mb-2" htmlFor="firstName">
+            <label className="text-black font-medium mb-2" htmlFor="firstName">
               First Name
             </label>
             <input
@@ -201,11 +201,11 @@ const ContactUs = () => {
               value={firsval}
               onChange={changefirst}
               placeholder="First Name"
-              className="w-[80vw] md:h-auto h-[6vh] rounded-xl border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
+              className="w-[80vw] md:h-auto text-black h-[6vh] rounded-xl border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-white font-medium mb-2" htmlFor="lastName">
+            <label className="text-black font-medium mb-2" htmlFor="lastName">
               Last Name
             </label>
             <input
@@ -214,11 +214,11 @@ const ContactUs = () => {
               value={lastval}
               onChange={changelst}
               placeholder="Last Name"
-              className="w-[80vw] rounded-xl md:h-auto h-[6vh]  border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
+              className="w-[80vw] text-black rounded-xl md:h-auto h-[6vh]  border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-white font-medium mb-2" htmlFor="email">
+            <label className="text-black font-medium mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -227,11 +227,11 @@ const ContactUs = () => {
               value={emailval}
               onChange={changeemail}
               placeholder="Email"
-              className="w-[80vw] rounded-xl md:h-auto h-[6vh]  border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
+              className="w-[80vw] rounded-xl text-black md:h-auto h-[6vh]  border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-white font-medium mb-2" htmlFor="phone">
+            <label className="text-black font-medium mb-2" htmlFor="phone">
               Phone Number
             </label>
             <input
@@ -240,11 +240,11 @@ const ContactUs = () => {
               value={Phoneval}
               onChange={changephone}
               placeholder="Phone Number"
-              className="w-[80vw] rounded-xl md:h-auto h-[6vh]  border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
+              className="w-[80vw] rounded-xl text-black md:h-auto h-[6vh]  border-2 border-[#BCB9B9] p-4 focus:border-[#2F3757]"
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-white font-medium mb-2" htmlFor="message">
+            <label className="text-black font-medium mb-2" htmlFor="message">
               Message
             </label>
             <textarea
@@ -252,7 +252,7 @@ const ContactUs = () => {
               value={messageval}
               onChange={changeMessage}
               placeholder="Message"
-              className="w-[80vw] rounded-xl border-2 border-[#BCB9B9] p-4 resize-none h-[20vh] focus:border-[#2F3757]"
+              className="w-[80vw] rounded-xl text-black border-2 border-[#BCB9B9] p-4 resize-none h-[20vh] focus:border-[#2F3757]"
             />
           </div>
         </div>
